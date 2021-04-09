@@ -1,4 +1,6 @@
+import React from 'react';
 import { Route, Switch } from 'react-router';
+import { connect } from 'react-redux';
 import './CSS/App.css';
 
 // Components
@@ -10,21 +12,36 @@ import Creation from './pages/Creation';
 import Home from './pages/Home';
 import Method from './pages/Method';
 import QuizStorage from './pages/QuizStorage';
+import QuizTaking from './pages/Quiz/QuizTaking';
+import Quiz from './pages/Quiz/Quiz';
 
-function App() {
+const mapStateToProps = (state) => {
+  return {
+    mode: state.mode
+  }
+}
+
+function App({ mode }) {
   return (
     <div className="App">
-      <Header />
-      <Switch>
-        <Route exact path="/"><Home /></Route>
-        <Route path="/method"><Method /></Route>
-        <Route path="/creation"><Creation /></Route>
-        <Route path="/storage"><QuizStorage /></Route>
-        <Route path="/">요청하신 페이지를 찾을 수 없습니다.</Route>
-      </Switch>
-      <Footer />
+      {mode === "normal" &&
+        <>
+          <Header />
+          <Switch>
+            <Route exact path="/"><Home /></Route>
+            <Route path="/method"><Method /></Route>
+            <Route path="/creation"><Creation /></Route>
+            <Route path="/storage"><QuizStorage /></Route>
+            <Route path="/quiz"><Quiz /></Route>
+          </Switch>
+          <Footer />
+        </>}
+      {mode === "quiz" &&
+        <Route path="/quiz/:id"><QuizTaking /></Route>
+      }
+
     </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

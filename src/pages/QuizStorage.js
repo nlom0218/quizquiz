@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const QuizStorage = () => {
     return (<>
@@ -6,4 +7,4 @@ const QuizStorage = () => {
     </>);
 }
 
-export default QuizStorage;
+export default connect()(QuizStorage);
