@@ -1,0 +1,25 @@
+.btn,
+input[type="submit"]{
+    padding: 10px 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 10px 7px 21px -10px #000000;
+    background-color: #3792C7;
+    color: #FAFDFF;
+}
+
+.btn:hover,
+input[type="submit"]:hover{
+    background-color: #2C84BC;
+}
+
+.btn:active,
+input[type="submit"]:active{
+    position: relative;
+    top: 1px
+}

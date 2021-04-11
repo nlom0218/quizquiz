@@ -1,14 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import "../CSS/Header.css"
+import { HomeIcon } from '../icon';
 
 const Header = () => {
-    return (<header>
-        <nav>
-            <ul>
-                <li><Link to="/">HOME</Link></li>
-                <li><Link to="/method" >만드는 방법</Link></li>
-                <li><Link to="/creation" >퀴즈 만들기</Link></li>
-                <li><Link to="/storage" >퀴즈 저장소</Link></li>
+    return (<header className="header">
+        <nav className="header_nav">
+            <ul className="nav_list">
+                <li><NavLink activeClassName="seleted" exact to="/">{HomeIcon}</NavLink></li>
+                <li><NavLink activeClassName="seleted" to="/method" >만드는 방법</NavLink></li>
+                <li><NavLink activeClassName="seleted" to="/creation" >퀴즈 만들기</NavLink></li>
+                <li><NavLink activeClassName="seleted" to="/storage" >퀴즈 저장소</NavLink></li>
             </ul>
         </nav>
     </header>);

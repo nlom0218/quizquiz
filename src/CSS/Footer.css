@@ -1,8 +1,27 @@
 .footer {
-    width: 60%;
+    width: 100%;
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 40px;
+    background-color: #F9FAFB;
+    padding: 30px 0px;
+}
+
+.footer .footer_explan-me .explan-me_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 3px;
+    color: #b3b3b3;
+    font-size: 15px;
+}
+
+.footer_explan-me a {
+    color: #b3b3b3;
+    font-size: 15px;
+}
+
+.footer_explan-me div:first-child {
+    margin-right: 10px;
 }

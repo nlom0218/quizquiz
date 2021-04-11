@@ -1,0 +1,31 @@
+.creation_page{
+    width: 100%;
+    margin: 50px 0px;
+}
+
+.creation_page .creation_intro{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .creation_intro .intro_msg {
+    font-size: 40px;
+} */
+
+.creation_intro .intro_img{
+    margin: 20px 0px;
+}
+
+.creation_intro img {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    -webkit-box-shadow: -1px 7px 13px -5px #000000; 
+    box-shadow: -1px 7px 13px -5px #000000;
+}
+
+.creation_intro a{
+    margin-top: 20px;
+}

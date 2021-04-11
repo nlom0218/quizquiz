@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { setQuizInfo } from '../../localStorage';
+import "../../CSS/CreationQuiz.css"
+import "../../CSS/Button.css"
 
 const mapStateToProps = (state) => {
     return {
@@ -40,7 +42,7 @@ const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
 
     return (
         <div className="quizInfo">
-            <form onSubmit={(e) => {
+            <form className="quizInfo_form" onSubmit={(e) => {
                 e.preventDefault()
                 setQuizInfo(quizTitle)
                 QuizInfo(createQuizId(), quizTitle, numOfQuiz)
@@ -48,6 +50,7 @@ const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
             }
             }>
                 <input
+                    className="quizInfo_title"
                     type="text"
                     placeholder="만들고자 하는 퀴즈의 주제는 무엇인가요?"
                     value={quizTitle}
@@ -56,18 +59,23 @@ const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
                     required
                     autoComplete='off'
                 />
-                <input
-                    type="number"
-                    min={1} max={50}
-                    value={numOfQuiz}
-                    name="numOfQuiz"
-                    onChange={onChangeValue}
-                    required
-                />
-                <input
-                    type="submit"
-                    value="생성하기"
-                />
+                <div className="quizInfo_num">
+                    <div className="quizInfo_num_msg">몇 개의 퀴즈를 만드나요? (1~50)</div>
+                    <input
+                        className="quizInfo_num_input"
+                        type="number"
+                        min={1} max={50}
+                        value={numOfQuiz}
+                        name="numOfQuiz"
+                        onChange={onChangeValue}
+                        required
+                    />
+                    <input
+                        className="quizInfo_btn btn"
+                        type="submit"
+                        value="만들기"
+                    />
+                </div>
             </form>
         </div >
     );

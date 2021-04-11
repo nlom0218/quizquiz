@@ -5,7 +5,6 @@ import { setQuiz } from '../../localStorage';
 
 const mapStateToProps = (state) => {
     return {
-        title: state.quizData.info.quizTitle,
         num: state.quizData.info.numOfQuiz
     }
 }
@@ -20,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const CreationQuizzes = ({ title, num, QuizAndAnswer }) => {
+const CreationQuizzes = ({ num, QuizAndAnswer }) => {
     const [finish, setFinish] = useState(false)
 
     let numArr = []
@@ -45,11 +44,10 @@ const CreationQuizzes = ({ title, num, QuizAndAnswer }) => {
         }
     }
 
-    return (<>
-        <div className="quizTitle">{title}</div>
-        <form className="quizForm" onSubmit={onSubmitQuiz}>
+    return (<div className="quizAndAnswer">
+        <form className="quizAndAnswer_form" onSubmit={onSubmitQuiz}>
             {numArr.map((item) => {
-                return (<div key={item} className="quizInput">
+                return (<div key={item} className="quizAndAnswer_input">
                     <input
                         type="text"
                         placeholder={`${item + 1}번 문제를 적어주세요`}
@@ -65,10 +63,10 @@ const CreationQuizzes = ({ title, num, QuizAndAnswer }) => {
                     />
                 </div>)
             })}
-            <input type="submit" value="완료!"></input>
+            <input type="submit" value="완료" />
         </form>
         {finish && < Redirect push to="/creation/completion" />}
-    </>);
+    </div>);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreationQuizzes);
