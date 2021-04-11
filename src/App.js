@@ -12,8 +12,9 @@ import Creation from './pages/Creation';
 import Home from './pages/Home';
 import Method from './pages/Method';
 import QuizStorage from './pages/QuizStorage';
-import QuizTaking from './pages/Quiz/QuizTaking';
-import Quiz from './pages/Quiz/Quiz';
+import QuizTaking from './Components/Quiz/QuizTaking';
+import Quiz from './pages/Quiz';
+import QuizFinish from './Components/Quiz/QuizFinish';
 
 const mapStateToProps = (state) => {
   return {
@@ -37,7 +38,10 @@ function App({ mode }) {
           <Footer />
         </>}
       {mode === "quiz" &&
-        <Route path="/quiz/:id"><QuizTaking /></Route>
+        <Switch>
+          <Route path="/quiz/finish"><QuizFinish /></Route>
+          <Route path="/quiz/:id"><QuizTaking /></Route>
+        </Switch>
       }
 
     </div>

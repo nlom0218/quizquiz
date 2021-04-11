@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { setQuizInfo } from '../../localStorage';
 
 const mapStateToProps = (state) => {
     return {
@@ -41,6 +42,7 @@ const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
         <div className="quizInfo">
             <form onSubmit={(e) => {
                 e.preventDefault()
+                setQuizInfo(quizTitle)
                 QuizInfo(createQuizId(), quizTitle, numOfQuiz)
                 startCreateQuizzes()
             }

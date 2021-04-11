@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
+import { setQuiz } from '../../localStorage';
 
 const mapStateToProps = (state) => {
     return {
@@ -35,8 +36,9 @@ const CreationQuizzes = ({ title, num, QuizAndAnswer }) => {
             quizzesArr.push([...document.getElementsByClassName(`${i + 1}quiz`)][0].value)
             answersArr.push([...document.getElementsByClassName(`${i + 1}answer`)][0].value)
         }
-        QuizAndAnswer(quizzesArr, answersArr)
         if (window.confirm("수정이 불가능 합니다. 퀴즈를 생성하시겠습니까?(퀴즈 저장소에 저장시 수정 및 삭제 가능합니다)")) {
+            QuizAndAnswer(quizzesArr, answersArr)
+            setQuiz(quizzesArr, answersArr)
             setFinish(true)
         } else {
             return
