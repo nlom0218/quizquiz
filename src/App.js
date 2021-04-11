@@ -15,6 +15,7 @@ import QuizStorage from './pages/QuizStorage';
 import QuizTaking from './Components/Quiz/QuizTaking';
 import Quiz from './pages/Quiz';
 import QuizFinish from './Components/Quiz/QuizFinish';
+import Notice from './pages/Notice';
 
 const mapStateToProps = (state) => {
   return {
@@ -33,6 +34,7 @@ function App({ mode }) {
             <Route path="/method"><Method /></Route>
             <Route path="/creation"><Creation /></Route>
             <Route path="/storage"><QuizStorage /></Route>
+            <Route path="/notice"><Notice /></Route>
             <Route path="/quiz"><Quiz /></Route>
           </Switch>
           <Footer />

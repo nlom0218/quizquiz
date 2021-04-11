@@ -1,20 +1,32 @@
 .footer {
     width: 100%;
     display: flex;
-    justify-content:center;
-    align-items: center;
-    margin: 0 auto;
-    background-color: #F9FAFB;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin: 0 auto; */
+    background-color: #343A40;
     padding: 30px 0px;
 }
 
-.footer .footer_explan-me .explan-me_item {
+.footer .footer_explan-me {
+    padding-right: 50px;
+    border-right: 1px solid #939393;
+}
+
+.footer_explan-me .explan-me_item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 3px;
     color: #b3b3b3;
     font-size: 15px;
+    font-weight: 300;
+}
+
+.footer_explan-me .explan-me_item:first-child,
+.footer_explan-web .explan-web_item:first-child {
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .footer_explan-me a {
@@ -23,5 +35,22 @@
 }
 
 .footer_explan-me div:first-child {
+    margin-right: 10px;
+}
+
+.footer .footer_explan-web {
+    margin-left: 50px;
+}
+
+.footer_explan-web .explan-web_item {
+    color: #b3b3b3;
+    font-size: 15px;
+    font-weight: 300;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.explan-web_log_icon {
     margin-right: 10px;
 }
