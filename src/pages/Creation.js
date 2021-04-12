@@ -4,15 +4,13 @@ import { Link, Route } from 'react-router-dom';
 import CreationQuizzes from '../Components/Creation/CreationQuizzes';
 import CreationQuizInfo from '../Components/Creation/CreationQuizInfo';
 import CreationCompletion from '../Components/Creation/CreationCompletion';
-import "../CSS/Creation.css"
-import "../CSS/Button.css"
 
 // img
-import img0 from "../Images/img0.png"
-import img1 from "../Images/img1.png"
-import img2 from "../Images/img2.jpeg"
-import img3 from "../Images/img3.png"
-import img4 from "../Images/img4.png"
+import img0 from "../Images/CreationImg/img0.png"
+import img1 from "../Images/CreationImg/img1.png"
+import img2 from "../Images/CreationImg/img2.png"
+import img3 from "../Images/CreationImg/img3.png"
+import img4 from "../Images/CreationImg/img4.png"
 
 const Creation = () => {
     const [quizzes, setQuizzes] = useState(false)
@@ -28,7 +26,7 @@ const Creation = () => {
             setNum(num + 1)
         }
         setImg(imgArr[num])
-    }, 2000)
+    }, 3000)
 
     const startCreateQuizzes = () => {
         setQuizzes(true)

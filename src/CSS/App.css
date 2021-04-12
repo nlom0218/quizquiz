@@ -28,3 +28,19 @@ a {
     color: black;
     text-decoration: none;
 }
+
+@import "Button.css";
+@import "Footer.css";
+@import "Header.css";
+@import "reset.css";
+
+/* Creation */
+@import "./Creation/Creation.css";
+@import "./Creation/CreationQuiz.css";
+@import "./Creation/CreationCompletion.css";
+@import "./Creation/CreationLoading.css";
+
+/* Quiz */
+@import "./Quiz/Quiz.css";
+@import "./Quiz/QuizTaking.css";
+@import "./Quiz/QuizContent.css"

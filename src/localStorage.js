@@ -1,17 +1,12 @@
-export const setQuiz = (quizzesArr, answersArr) => {
+export const LS_setQuiz = (quizzesArr, answersArr) => {
     localStorage.setItem("quizzes", JSON.stringify(quizzesArr))
-    localStorage.setItem("answers", JSON.stringify(quizzesArr))
+    localStorage.setItem("answers", JSON.stringify(answersArr))
 }
 
-export const setQuizInfo = (quizTitle) => {
-    localStorage.setItem("quizTitle", JSON.stringify(quizTitle))
+export const LS_setQuizInfo = (quizTitle, quizId, numOfQuiz) => {
+    localStorage.setItem("quizInfo", JSON.stringify({ quizTitle, quizId, numOfQuiz }))
 }
 
-// 퀴즈가 시작되면 새로고침을 해도 데이터가 날라가지 않고 
-// localStroage에 저장되어 새롭게 로딩되어 그대로 보이기,,,
-// if (storeQuizTitle) {
-//     localStorage.setItem("quizzes", JSON.stringify(storeQuizzes))
-//     localStorage.setItem("answers", JSON.stringify(storeAnswers))
-//     localStorage.setItem("quizTitle", JSON.stringify(storeQuizTitle))
-//     localStorage.setItem("mode", JSON.stringify("quiz"));
-// }
+export const LS_getQuizInfo = () => JSON.parse(localStorage.getItem("quizInfo"))
+export const LS_getQuizzesArr = () => JSON.parse(localStorage.getItem("quizzes"))
+export const LS_getAnswersArr = () => JSON.parse(localStorage.getItem("answers"))

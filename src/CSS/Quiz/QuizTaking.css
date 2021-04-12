@@ -1,0 +1,43 @@
+.quizMode .quizTaking {
+    background-color: rgb(250, 250, 250);
+    width: 60%;
+    height: 60%;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.quizTaking .quizTaking_header {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgb(130, 130, 130);
+}
+
+.quizTaking_header .homeBtn {
+    margin-right: 60px;
+    font-size: 30px;
+}
+
+.quizTaking_header .quizTitle {
+    outline: none;
+    border: none;
+    background-color: rgb(250, 250, 250);
+    font-size: 30px;
+    width: 70%;
+}
+
+.quizTaking .quizNum {
+    font-size: 80px;
+}
+
+.quizNum .quizNum_current {
+    color: #E8314E;
+    margin-right: 25px;
+}

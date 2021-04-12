@@ -1,30 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { setQuizInfo } from '../../localStorage';
-import "../../CSS/CreationQuiz.css"
-import "../../CSS/Button.css"
+import { LS_getQuizInfo, LS_setQuizInfo } from '../../localStorage';
 
-const mapStateToProps = (state) => {
-    return {
-        title: state.quizData.info.quizTitle,
-        num: state.quizData.info.numOfQuiz
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        QuizInfo: (quizId, quizTitle, numOfQuiz) => dispatch({
-            type: "QUIZ_INFO",
-            quizId,
-            quizTitle,
-            numOfQuiz
-        })
-    }
-}
-
-const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
-    const [quizTitle, setQuizTItle] = useState(title ? title : "")
-    const [numOfQuiz, setNumOfQuiz] = useState(num)
+const CreationQuizInfo = ({ startCreateQuizzes }) => {
+    const [quizTitle, setQuizTItle] = useState("")
+    const [numOfQuiz, setNumOfQuiz] = useState(3)
 
     const onChangeValue = (e) => {
         let { target: { name, value } } = e
@@ -44,8 +24,8 @@ const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
         <div className="quizInfo">
             <form className="quizInfo_form" onSubmit={(e) => {
                 e.preventDefault()
-                setQuizInfo(quizTitle)
-                QuizInfo(createQuizId(), quizTitle, numOfQuiz)
+                const quizId = createQuizId()
+                LS_setQuizInfo(quizTitle, quizId, numOfQuiz)
                 startCreateQuizzes()
             }
             }>
@@ -81,4 +61,4 @@ const CreationQuizInfo = ({ QuizInfo, title, num, startCreateQuizzes }) => {
     );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreationQuizInfo);
+export default connect()(CreationQuizInfo);

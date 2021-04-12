@@ -40,12 +40,13 @@ function App({ mode }) {
           <Footer />
         </>}
       {mode === "quiz" &&
-        <Switch>
-          <Route path="/quiz/finish"><QuizFinish /></Route>
-          <Route path="/quiz/:id"><QuizTaking /></Route>
-        </Switch>
+        <div className="quizMode">
+          <Switch>
+            <Route path="/quiz/start"><QuizTaking /></Route>
+            <Route path="/quiz/finish"><QuizFinish /></Route>
+          </Switch>
+        </div>
       }
-
     </div>
   );
 }

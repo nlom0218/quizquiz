@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import CreationLoading from './CreationLoading';
 import CreationLoadingEnd from './CreationLoadingEnd';
-import "../../CSS/CreationCompletion.css"
 
 const CreationCompletion = () => {
     const [loading, setLoading] = useState(true)
 
     setTimeout(() => setLoading(false), 2000)
 
-    return (<div className="creation_complet">
+    return (<div className="creation_complete">
         {loading ?
-            <div><CreationLoading /></div>
+            <CreationLoading />
             :
-            <div><CreationLoadingEnd /></div>}
+            <CreationLoadingEnd />}
     </div>);
 }
 

@@ -1,26 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import { setQuiz } from '../../localStorage';
+import { WarningIcon } from '../../icon';
+import { LS_getQuizInfo, LS_setQuiz } from '../../localStorage';
 
-const mapStateToProps = (state) => {
-    return {
-        num: state.quizData.info.numOfQuiz
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        QuizAndAnswer: (quizzesArr, answersArr) => dispatch({
-            type: "QUIZ_AND_ANSWER",
-            quizzesArr,
-            answersArr
-        })
-    }
-}
-
-const CreationQuizzes = ({ num, QuizAndAnswer }) => {
+const CreationQuizzes = () => {
     const [finish, setFinish] = useState(false)
+
+    const { numOfQuiz: num } = LS_getQuizInfo()
 
     let numArr = []
     for (let i = 0; i < num; i++) {
@@ -36,8 +23,7 @@ const CreationQuizzes = ({ num, QuizAndAnswer }) => {
             answersArr.push([...document.getElementsByClassName(`${i + 1}answer`)][0].value)
         }
         if (window.confirm("수정이 불가능 합니다. 퀴즈를 생성하시겠습니까?(퀴즈 저장소에 저장시 수정 및 삭제 가능합니다)")) {
-            QuizAndAnswer(quizzesArr, answersArr)
-            setQuiz(quizzesArr, answersArr)
+            LS_setQuiz(quizzesArr, answersArr)
             setFinish(true)
         } else {
             return
@@ -45,6 +31,10 @@ const CreationQuizzes = ({ num, QuizAndAnswer }) => {
     }
 
     return (<div className="quizAndAnswer">
+        <div className="quizAndAnswer_warning">
+            <div className="warning_icon">{WarningIcon}</div>
+            <div className="warning_msg">이 페이지를 벗어나면 퀴즈 데이터는 사라집니다</div>
+        </div>
         <form className="quizAndAnswer_form" onSubmit={onSubmitQuiz}>
             {numArr.map((item) => {
                 return (<div key={item} className="quizAndAnswer_input">
@@ -69,4 +59,4 @@ const CreationQuizzes = ({ num, QuizAndAnswer }) => {
     </div>);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreationQuizzes);
+export default connect()(CreationQuizzes);
