@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
 const QuizAll = ({ numOfQuiz }) => {
     const quizzes = JSON.parse(localStorage.getItem("quizzes"))
     const answers = JSON.parse(localStorage.getItem("answers"))
-    const quizTitle = JSON.parse(localStorage.getItem("quizTitle"))
 
     let numArr = []
     for (let i = 0; i < numOfQuiz; i++) {

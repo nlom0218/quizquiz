@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { LS_getQuizInfo, LS_setQuizInfo } from '../../localStorage';
+import { LS_setQuizInfo } from '../../localStorage';
 
 const CreationQuizInfo = ({ startCreateQuizzes }) => {
     const [quizTitle, setQuizTItle] = useState("")

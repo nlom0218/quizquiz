@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { LeftIcon, RightIcon } from '../../icon';
 import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr } from '../../localStorage';
 
-const QuizContent = ({ num, onClickMoveBtn, openAnswer, onClickAnswerBtn }) => {
+const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
     const quizzes = LS_getQuizzesArr()
     const answers = LS_getAnswersArr()
-    const { numOfQuiz } = LS_getQuizInfo()
 
     return (<div className="quizContainer">
         <div className="quiz_content">
@@ -16,21 +16,17 @@ const QuizContent = ({ num, onClickMoveBtn, openAnswer, onClickAnswerBtn }) => {
                 }
             </div>
         </div>
-        <div className="quizMoveBtn" onClick={onClickMoveBtn}>
-            {num === 0 ? null :
-                <button
-                    className="beforeBtn"
-                >이전문제</button>
-            }
-            {num === numOfQuiz - 1 ?
-                <button
-                    className="initBtn"
-                >처음으로 돌아가기</button>
-                :
-                <button
-                    className="nextBtn"
-                >다음문제</button>
-            }
+        <div className="quizMoveBtn">
+            <button
+                name="beforeBtn"
+                className="btn beforeBtn"
+                onClick={onClickBeforeBtn}
+            >{LeftIcon}</button>
+            <button
+                name="nextBtn"
+                className="btn nextBtn"
+                onClick={onClickNextBtn}
+            >{RightIcon}</button>
         </div>
     </div>);
 }

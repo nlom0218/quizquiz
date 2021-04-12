@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { HomeIcon } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr } from '../../localStorage';
+import { LS_getQuizInfo } from '../../localStorage';
 import QuizContent from './QuizContent';
 import QuizNav from './QuizNav';
 
@@ -18,19 +18,22 @@ const QuizTaking = ({ normalMode }) => {
 
     const { quizTitle, numOfQuiz } = LS_getQuizInfo()
 
-    const onClickMoveBtn = (e) => {
-        const { target: { className } } = e
+    const onClickBeforeBtn = () => {
         setOpenAnswer(false)
-        if (className === "beforeBtn") {
-            setNum(num - 1)
-        } else if (className === "nextBtn") {
-            setNum(num + 1)
-        } else if (className === "initBtn") {
-            setNum(0)
-        }
-        else {
+        if (num === 0) {
+            alert("첫번째 문제입니다.")
             return
         }
+        setNum(num - 1)
+    }
+
+    const onClickNextBtn = () => {
+        setOpenAnswer(false)
+        if (num === numOfQuiz - 1) {
+            alert("마지막 문제입니다.")
+            return
+        }
+        setNum(num + 1)
     }
 
     const onClickAnswerBtn = () => {
@@ -54,8 +57,9 @@ const QuizTaking = ({ normalMode }) => {
         <QuizContent
             num={num}
             openAnswer={openAnswer}
-            onClickMoveBtn={onClickMoveBtn}
             onClickAnswerBtn={onClickAnswerBtn}
+            onClickBeforeBtn={onClickBeforeBtn}
+            onClickNextBtn={onClickNextBtn}
         />
         {num === numOfQuiz - 1 && <QuizNav />}
     </div>);

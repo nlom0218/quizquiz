@@ -36,3 +36,30 @@
     font-size: 45px;
     color: #E8314E
 }
+
+.quizContainer .quizMoveBtn {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.quizMoveBtn .btn {
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343A40;
+    color: rgb(244, 244, 244)
+}
+
+.quizMoveBtn .beforeBtn {
+    margin-right: 10px;
+}
+
+.quizMoveBtn .nextBtn {
+    margin-left: 10px;
+}
