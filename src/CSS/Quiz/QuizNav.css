@@ -1,0 +1,9 @@
+.quizMoveBtn .quizFinish_btn{
+    background-color: #E8314E;
+   margin-left: 10px;
+   padding: 5px 10px;
+}
+
+.quizMoveBtn .quizFinish_btn:hover{
+    background-color: #ff1f45;
+}

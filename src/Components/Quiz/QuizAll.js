@@ -1,15 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr } from '../../localStorage';
 
-const mapStateToProps = (state) => {
-    return {
-        numOfQuiz: state.quizData.info.numOfQuiz
-    }
-}
-
-const QuizAll = ({ numOfQuiz }) => {
-    const quizzes = JSON.parse(localStorage.getItem("quizzes"))
-    const answers = JSON.parse(localStorage.getItem("answers"))
+const QuizAll = () => {
+    const quizzes = LS_getQuizzesArr()
+    const answers = LS_getAnswersArr()
+    const { numOfQuiz } = LS_getQuizInfo()
 
     let numArr = []
     for (let i = 0; i < numOfQuiz; i++) {
@@ -28,4 +24,4 @@ const QuizAll = ({ numOfQuiz }) => {
     </>);
 }
 
-export default connect(mapStateToProps)(QuizAll);
+export default connect()(QuizAll);

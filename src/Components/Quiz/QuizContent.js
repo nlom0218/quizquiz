@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { LeftIcon, RightIcon } from '../../icon';
 import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr } from '../../localStorage';
+import QuizNav from './QuizNav';
 
 const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
     const quizzes = LS_getQuizzesArr()
     const answers = LS_getAnswersArr()
+    const { numOfQuiz } = LS_getQuizInfo()
 
     return (<div className="quizContainer">
         <div className="quiz_content">
@@ -27,6 +29,7 @@ const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClic
                 className="btn nextBtn"
                 onClick={onClickNextBtn}
             >{RightIcon}</button>
+            {num === numOfQuiz - 1 && <QuizNav />}
         </div>
     </div>);
 }

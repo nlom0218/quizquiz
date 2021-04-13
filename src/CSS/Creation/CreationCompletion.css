@@ -8,7 +8,7 @@
 
 .creation_complete .quizBtn{
     width: 80%;
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,7 +32,7 @@
 }
 
 .start_icon, .save_icon {
-    margin: 20px 0px;
+    margin: 40px 0px 30px 0px;
     color: rgb(244, 244, 244)
 }
 

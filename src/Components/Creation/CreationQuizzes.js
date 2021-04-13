@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { WarningIcon } from '../../icon';
-import { LS_getQuizInfo, LS_setQuiz } from '../../localStorage';
+import { LS_setQuiz } from '../../localStorage';
 
-const CreationQuizzes = () => {
+const CreationQuizzes = ({ num }) => {
     const [finish, setFinish] = useState(false)
-
-    const { numOfQuiz: num } = LS_getQuizInfo()
 
     let numArr = []
     for (let i = 0; i < num; i++) {
@@ -33,7 +31,7 @@ const CreationQuizzes = () => {
     return (<div className="quizAndAnswer">
         <div className="quizAndAnswer_warning">
             <div className="warning_icon">{WarningIcon}</div>
-            <div className="warning_msg">이 페이지를 벗어나면 퀴즈 데이터는 사라집니다</div>
+            <div className="warning_msg">아래의 완료 버튼을 누르기 전 페이지를 벗어나면 퀴즈 데이터는 사라집니다</div>
         </div>
         <form className="quizAndAnswer_form" onSubmit={onSubmitQuiz}>
             {numArr.map((item) => {

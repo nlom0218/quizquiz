@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="explan-web_item">ABOUT WEB</div>
                 <div className=" explan-web_log explan-web_item">
                     <div className="explan-web_log_icon">{WebLogo}</div>
-                    <div className="explan-web_log_msg">쉽게 만드는 퀴즈</div>
+                    <div className="explan-web_log_msg">QUIZ MAKER</div>
                 </div>
                 <div className=" explan-web_log explan-web_item">
                     <div className="explan-web_log_icon">{Sun}</div>

@@ -39,8 +39,10 @@ a {
 @import "./Creation/CreationQuiz.css";
 @import "./Creation/CreationCompletion.css";
 @import "./Creation/CreationLoading.css";
+@import "./Creation/CreationQuizSave.css";
 
 /* Quiz */
 @import "./Quiz/Quiz.css";
 @import "./Quiz/QuizTaking.css";
-@import "./Quiz/QuizContent.css"
+@import "./Quiz/QuizContent.css";
+@import "./Quiz/QuizNav.css";

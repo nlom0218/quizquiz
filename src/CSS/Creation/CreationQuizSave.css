@@ -1,0 +1,69 @@
+.quizSave-page {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.quizSave-page .quizSave_desc {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizSave_desc .quizSave_desc_normal {
+    font-size: 36px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.quizSave_desc .quizSave_desc_warning {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.quizSave_desc_warning .warning_icon {
+    margin-right: 15px;
+    color: #E8314E;
+}
+
+.quizSave_desc_warning .warning_msg {
+    background-color: #E8314E;
+    color: rgb(244, 244, 244);
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.quizSave-page  .quizSave_btn {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.quizSave_btn .quizSave_column {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.quizSave_btn .btn {
+    margin-right: 30px;
+}
+
+.quizSave_column .quizSave_msg {
+    font-size: 20px;
+}

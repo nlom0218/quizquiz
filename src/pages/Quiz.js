@@ -2,35 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        quizMode: () => dispatch({ type: "CHANGE_QUIZ_MODE" }),
-    }
-}
 
-const Quiz = ({ quizMode }) => {
-
-    if (JSON.parse(localStorage.getItem("mode")) === "quiz") {
-        quizMode()
-    }
-
+const Quiz = () => {
     const quizTitle = JSON.parse(localStorage.getItem("quizTitle"))
 
-    const onClickBtn = () => {
-        localStorage.setItem("mode", JSON.stringify("quiz"))
-        quizMode()
-    }
-
-    return (<>
+    return (<div className="quiz_page main">
         <div>{quizTitle}</div>
         <Link to={`/quiz/start`}>
-            <button onClick={onClickBtn}>
+            <button>
                 퀴즈 시작하기
             </button>
         </Link>
-    </>);
+    </div>);
 }
 
 
 
-export default connect(null, mapDispatchToProps)(Quiz);
+export default connect()(Quiz);

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { LS_setQuizInfo } from '../../localStorage';
+import CreationQuizzes from './CreationQuizzes';
 
-const CreationQuizInfo = ({ startCreateQuizzes }) => {
+const CreationQuizInfo = () => {
     const [quizTitle, setQuizTItle] = useState("")
     const [numOfQuiz, setNumOfQuiz] = useState(3)
+    const [num, setNum] = useState(3)
+    const [quizAndAnswer, setQuizAndAnswer] = useState(false)
 
     const onChangeValue = (e) => {
         let { target: { name, value } } = e
@@ -26,7 +29,8 @@ const CreationQuizInfo = ({ startCreateQuizzes }) => {
                 e.preventDefault()
                 const quizId = createQuizId()
                 LS_setQuizInfo(quizTitle, quizId, numOfQuiz)
-                startCreateQuizzes()
+                setNum(numOfQuiz)
+                setQuizAndAnswer(true)
             }
             }>
                 <input
@@ -44,7 +48,7 @@ const CreationQuizInfo = ({ startCreateQuizzes }) => {
                     <input
                         className="quizInfo_num_input"
                         type="number"
-                        min={1} max={50}
+                        min={1} max={20}
                         value={numOfQuiz}
                         name="numOfQuiz"
                         onChange={onChangeValue}
@@ -57,6 +61,7 @@ const CreationQuizInfo = ({ startCreateQuizzes }) => {
                     />
                 </div>
             </form>
+            {quizAndAnswer && <CreationQuizzes num={num} />}
         </div >
     );
 }

@@ -17,38 +17,23 @@ import Quiz from './pages/Quiz';
 import QuizFinish from './Components/Quiz/QuizFinish';
 import Notice from './pages/Notice';
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode
-  }
-}
-
 function App({ mode }) {
   return (
     <div className="App">
-      {mode === "normal" &&
-        <>
-          <Header />
-          <Switch>
-            <Route exact path="/"><Home /></Route>
-            <Route path="/method"><Method /></Route>
-            <Route path="/creation"><Creation /></Route>
-            <Route path="/storage"><QuizStorage /></Route>
-            <Route path="/notice"><Notice /></Route>
-            <Route path="/quiz"><Quiz /></Route>
-          </Switch>
-          <Footer />
-        </>}
-      {mode === "quiz" &&
-        <div className="quizMode">
-          <Switch>
-            <Route path="/quiz/start"><QuizTaking /></Route>
-            <Route path="/quiz/finish"><QuizFinish /></Route>
-          </Switch>
-        </div>
-      }
+      <Header />
+      <Switch>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/method"><Method /></Route>
+        <Route path="/creation"><Creation /></Route>
+        <Route path="/storage"><QuizStorage /></Route>
+        <Route path="/notice"><Notice /></Route>
+        <Route exact path="/quiz"><Quiz /></Route>
+        <Route path="/quiz/start"><QuizTaking /></Route>
+        <Route path="/quiz/finish"><QuizFinish /></Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);

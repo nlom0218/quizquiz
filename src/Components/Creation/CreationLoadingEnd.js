@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ListIcon, Save, Start } from '../../icon';
+import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr, LS_setQuizDate1, LS_setQuizDate2 } from '../../localStorage';
 
 const CreationLoadingEnd = () => {
     const [start, setStart] = useState(false)
-    const [save, setSave] = useState(false)
-
-    const onClickBtn = (e) => {
-        const { target: { name } } = e
-        if (name === "startBtn") {
-            if (window.confirm("퀴즈가 끝나면 퀴즈는 삭제됩니다. 괜찮습니까?")) {
-                setStart(true)
-            } else {
-                return
-            }
-        } else if (name === "saveBtn") {
-            setSave(true)
+    const onClickBtn = () => {
+        if (window.confirm("퀴즈가 끝나면 퀴즈는 삭제됩니다. 괜찮습니까?")) {
+            setStart(true)
+        } else {
+            return
         }
+
     }
 
     return (<>
@@ -34,11 +30,13 @@ const CreationLoadingEnd = () => {
             <div className="quizBtn_save">
                 <div className="save_icon">{Save}</div>
                 <ul className="save_msg">
-                    <li>{ListIcon} 퀴즈가 저장소에 저장됩니다.</li>
+                    <li>{ListIcon} 퀴즈 저장소에 저장됩니다.</li>
                     <li>{ListIcon} 저장소에서 퀴즈를 수정 및 삭제 가능합니다.</li>
-                    <li>{ListIcon} 퀴즈 저장소로 이동합니다.</li>
+                    <li>{ListIcon} 퀴즈 저장소 선택화면으로 이동합니다.</li>
                 </ul>
-                <button className="btn saveBtn" name="saveBtn" onClick={onClickBtn}>저장하기</button>
+                <Link to="/creation/quizsave">
+                    <button className="btn saveBtn" name="saveBtn">저장하기</button>
+                </Link>
             </div>
         </div>
         {start && < Redirect push to="/quiz" />}
