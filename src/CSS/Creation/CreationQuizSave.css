@@ -45,15 +45,16 @@
 }
 
 .quizSave-page  .quizSave_btn {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 
 .quizSave_btn .quizSave_column {
+    width: 100%;
     margin-bottom: 30px;
     display: flex;
     align-items: flex-end;
@@ -64,6 +65,47 @@
     margin-right: 30px;
 }
 
+.quizSave_btn .noQuiz {
+    background-color: #36A4BF;
+}
+
+.quizSave_btn .isQuiz {
+    background-color: #F54D00;
+}
+.quizSave-page .isQuiz:hover ~ .quizSave_btn_msg, 
+.quizSave-page .noQuiz:hover ~ .quizSave_btn_msg {
+    display: block;
+}
+
+.quizSave_btn .quizSave_icon {
+    font-size: 30px;
+    color: #343A40;
+}
+
 .quizSave_column .quizSave_msg {
     font-size: 20px;
+}
+
+.quizSave_column .quizSave_btn_msg {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    opacity: 0.9;
+    font-size: 20px;
+    padding: 20px 30px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-weight: 600;
+    color: #FAFDFF;
+}
+
+.quizSave_column .title_msg {
+    background-color: #F54D00;
+}
+
+.quizSave_column .save_msg {
+    background-color: #36A4BF;
 }

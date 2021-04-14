@@ -1,50 +1,72 @@
 import React, { useState } from 'react';
-import { WarningIcon } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizData1, LS_getQuizInfo, LS_getQuizzesArr, LS_setQuizData1, LS_setQuizData2 } from '../../localStorage';
+import { Redirect } from 'react-router';
+import { NoQuizInStorage, QuizInStorage, WarningIcon } from '../../icon';
+import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr, LS_quizArr, LS_quizRemove, LS_setQuizData1, LS_setQuizData10, LS_setQuizData2, LS_setQuizData3, LS_setQuizData4, LS_setQuizData5, LS_setQuizData6, LS_setQuizData7, LS_setQuizData8, LS_setQuizData9, setLS_quizDate } from '../../localStorage';
 
 const CreationQuizSave = () => {
-    const { info: { quizTitle: quizTitle1 } } = LS_getQuizData1()
-    console.log(quizTitle1);
+    setLS_quizDate()
+    const [quizArr, setQuizArr] = useState(LS_quizArr())
+    const [save, setSave] = useState(false)
 
     const onClickQSBtn = (e) => {
         const quizzes = LS_getQuizzesArr()
         const answers = LS_getAnswersArr()
         const info = LS_getQuizInfo()
         const quizData = { info, quizzes, answers }
-
         const { target: { name } } = e
         if (name === "QS1Btn") {
             LS_setQuizData1(quizData)
         } else if (name === "QS2Btn") {
             LS_setQuizData2(quizData)
+        } else if (name === "QS3Btn") {
+            LS_setQuizData3(quizData)
+        } else if (name === "QS4Btn") {
+            LS_setQuizData4(quizData)
+        } else if (name === "QS5Btn") {
+            LS_setQuizData5(quizData)
+        } else if (name === "QS6Btn") {
+            LS_setQuizData6(quizData)
+        } else if (name === "QS7Btn") {
+            LS_setQuizData7(quizData)
+        } else if (name === "QS8Btn") {
+            LS_setQuizData8(quizData)
+        } else if (name === "QS9Btn") {
+            LS_setQuizData9(quizData)
+        } else if (name === "QS10Btn") {
+            LS_setQuizData10(quizData)
         } else {
             return
         }
+        setLS_quizDate()
+        setQuizArr(LS_quizArr())
+        setSave(true)
     }
 
     return (<div className="quizSave-page">
         <div className="quizSave_desc">
-            <div className="quizSave_desc_normal">최대 10개의 퀴즈가 저장됩니다.</div>
+            <div className="quizSave_desc_normal">나의 퀴즈 저장하기</div>
+            <div className="quizSave_desc_normal"></div>
             <div className="quizSave_desc_warning">
                 <div className="warning_icon">{WarningIcon}</div>
-                <div className="warning_msg">퀴즈가 저장된 저장소에 저장을 하면 기존 퀴즈는 사라집니다</div>
+                <div className="warning_msg">퀴즈가 저장된 저장소에 퀴즈를 저장을 하면 기존 퀴즈는 사라집니다</div>
             </div>
         </div>
-        <div className="quizSave_btn" onClick={onClickQSBtn}>
-            <div className="quizSave_column">
-                <button className="btn QS1Btn" name="QS1Btn">저장소 01</button>
-                <div className="quizSave_msg">{quizTitle1 ? `저장된 퀴즈: ${quizTitle1}` : "저장된 퀴즈가 없습니다."}</div>
-            </div>
-            <button className="btn QS2Btn" name="QS2Btn">저장소 02</button>
-            <button className="btn QS3Btn" name="QS3Btn">저장소 03</button>
-            <button className="btn QS4Btn" name="QS4Btn">저장소 04</button>
-            <button className="btn QS5Btn" name="QS5Btn">저장소 05</button>
-            <button className="btn QS6Btn" name="QS6Btn">저장소 06</button>
-            <button className="btn QS7Btn" name="QS7Btn">저장소 07</button>
-            <button className="btn QS8Btn" name="QS8Btn">저장소 08</button>
-            <button className="btn QS9Btn" name="QS9Btn">저장소 09</button>
-            <button className="btn QS10Btn" name="QS10Btn">저장소 10</button>
-        </div >
+        <ul className="quizSave_btn" onClick={onClickQSBtn}>
+            {quizArr.map((quizData, index) => {
+                return (<div style={{ "position": "relative", "width": "100%" }} key={index}>
+                    <div className="quizSave_column">
+                        <button className={`btn QS${index + 1}Btn ${quizData ? "isQuiz" : "noQuiz"}`} name={`QS${index + 1}Btn`}>
+                            저장소 {index + 1 === 10 ? index + 1 : `0${index + 1}`}
+                        </button>
+                        <div className="quizSave_icon">{quizData ? QuizInStorage : NoQuizInStorage}</div>
+                        {quizData ? <div className="quizSave_btn_msg title_msg">저장된 퀴즈: {quizData.info.quizTitle}</div>
+                            :
+                            <div className="quizSave_btn_msg save_msg">퀴즈 저장소{index + 1}에 저장됩니다.</div>}
+                    </div>
+                </div>)
+            })}
+        </ul>
+        {save && <Redirect push to="/storage" />}
     </div >);
 }
 

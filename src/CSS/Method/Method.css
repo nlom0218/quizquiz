@@ -1,0 +1,21 @@
+.method_page .method_intro{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.method_intro .method_img{
+    margin-bottom: 20px;
+}
+
+.method_intro img {
+    width: 100%;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: -1px 7px 13px -5px #000000;
+}
+
+.method_intro a{
+    margin-top: 20px;
+}

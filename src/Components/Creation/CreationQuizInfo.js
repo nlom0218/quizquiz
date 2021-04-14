@@ -36,12 +36,13 @@ const CreationQuizInfo = () => {
                 <input
                     className="quizInfo_title"
                     type="text"
-                    placeholder="만들고자 하는 퀴즈의 주제는 무엇인가요?"
+                    placeholder="만들고자 하는 퀴즈의 제목은 무엇인가요?"
                     value={quizTitle}
                     name="quizTitle"
                     onChange={onChangeValue}
                     required
                     autoComplete='off'
+                    maxLength="50"
                 />
                 <div className="quizInfo_num">
                     <div className="quizInfo_num_msg">몇 개의 퀴즈를 만드나요? (1~50)</div>

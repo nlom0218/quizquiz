@@ -38,7 +38,7 @@ const CreationQuizzes = ({ num }) => {
                 return (<div key={item} className="quizAndAnswer_input">
                     <input
                         type="text"
-                        placeholder={`${item + 1}번 문제를 적어주세요`}
+                        placeholder={`${item + 1}번 퀴즈를 적어주세요`}
                         className={`${item + 1}quiz`}
                         autoComplete='off'
                         required

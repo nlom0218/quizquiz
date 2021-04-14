@@ -21,7 +21,7 @@
 }
 
 .quizInfo_form .quizInfo_title {
-    width: 400px;
+    width: 40%;
     padding-left: 10px;
     padding-bottom: 5px;
     margin-bottom: 10px;
@@ -30,6 +30,7 @@
 }
 
 .quizInfo_form .quizInfo_num {
+    width: 40%;
     display: flex;
     align-items: flex-end;
     justify-content: center;

@@ -4,15 +4,16 @@ import CreationLoading from './CreationLoading';
 import CreationLoadingEnd from './CreationLoadingEnd';
 
 const CreationCompletion = () => {
-    const [loading, setLoading] = useState(true)
+    // const [loading, setLoading] = useState(true)
 
-    setTimeout(() => setLoading(false), 2000)
+    // setTimeout(() => setLoading(false), 2000)
 
     return (<div className="creation_complete">
-        {loading ?
+        {/* {loading ?
             <CreationLoading />
             :
-            <CreationLoadingEnd />}
+            <CreationLoadingEnd />} */}
+        <CreationLoadingEnd />
     </div>);
 }
 

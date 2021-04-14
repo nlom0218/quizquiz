@@ -17,7 +17,7 @@ import Quiz from './pages/Quiz';
 import QuizFinish from './Components/Quiz/QuizFinish';
 import Notice from './pages/Notice';
 
-function App({ mode }) {
+function App() {
   return (
     <div className="App">
       <Header />
