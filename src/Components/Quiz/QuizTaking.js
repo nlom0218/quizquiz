@@ -53,7 +53,6 @@ const QuizTaking = () => {
         }
     }
 
-
     return (<div className="quizMode" style={{ backgroundImage: `url(${BgImg})` }}>
         <div className="quizTaking">
             <div className="quizTaking_header">
