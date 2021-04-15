@@ -1,7 +1,8 @@
+import { faCompress } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { HomeIcon } from '../../icon';
+import { HomeIcon, FullScr, SmallScr } from '../../icon';
 import { LS_getQuizInfo } from '../../localStorage';
 import QuizContent from './QuizContent';
 
@@ -9,12 +10,9 @@ const QuizTaking = () => {
     const [num, setNum] = useState(0)
     const [openAnswer, setOpenAnswer] = useState(false)
 
-    useEffect(() => {
-        document.querySelector(".quizMode").webkitRequestFullscreen()
-    }, [])
+    const BgImg = JSON.parse(localStorage.getItem("quizBgImg"))
 
     const { quizTitle, numOfQuiz } = LS_getQuizInfo()
-    console.log(quizTitle);
 
     const onClickBeforeBtn = () => {
         setOpenAnswer(false)
@@ -38,14 +36,40 @@ const QuizTaking = () => {
         setOpenAnswer(prev => !prev)
     }
 
-    return (<div className="quizMode">
+    const getScr = (e) => {
+        console.dir(e.target.parentNode);
+        let { target: { parentNode: { parentNode: { id: id1 } } } } = e
+        let { target: { parentNode: { id: id2 } } } = e
+        const name = id1 ? id1 : id2
+        return name
+    }
+
+    const onClickScrBtn = (e) => {
+        const name = getScr(e)
+        if (name === "smallScr") {
+            document.webkitExitFullscreen()
+        } else if (name === "fullScr") {
+            document.querySelector(".quizMode").webkitRequestFullscreen()
+        }
+    }
+
+
+    return (<div className="quizMode" style={{ backgroundImage: `url(${BgImg})` }}>
         <div className="quizTaking">
             <div className="quizTaking_header">
-                <Link to="/"><div className="homeBtn">{HomeIcon}</div></Link>
-                <input readOnly value={quizTitle} className="quizTitle" />
-                <div className="quizNum">
-                    <span className="quizNum_current">{num + 1}</span>
-                / {numOfQuiz}
+                <div className="quizTaking_header_column">
+                    <div className="header_btn">
+                        <div className="homeBtn"><Link to="/">{HomeIcon}</Link></div>
+                        <div className="screenFullBtn screenBtn" id="fullScr" onClick={onClickScrBtn}>{FullScr}</div>
+                        <div className="screenSmallBtn screenBtn" id="smallScr" onClick={onClickScrBtn}>{SmallScr}</div>
+                    </div>
+                    <input readOnly value={quizTitle} className="quizTitle" />
+                </div>
+                <div className="quizTaking_header_column">
+                    <div className="quizNum">
+                        <span className="quizNum_current">{num + 1}</span>
+                        <span className="quizNum_all">/ {numOfQuiz}</span>
+                    </div>
                 </div>
             </div>
             <QuizContent

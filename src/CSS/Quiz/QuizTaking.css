@@ -1,7 +1,17 @@
+.quizMode {
+    width: 100%;
+    height: 100%;
+    background-color: #343A40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .quizMode .quizTaking {
     background-color: rgb(244, 244, 244);
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
     border-radius: 80px;
     display: flex;
     flex-direction: column;
@@ -12,34 +22,61 @@
 
 .quizTaking .quizTaking_header {
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     padding-bottom: 30px;
     width: 90%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    border-bottom: 1px solid rgb(130, 130, 130);
+    border-bottom: 2px solid rgb(130, 130, 130);
+}
+.quizTaking_header_column:first-child {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.quizTaking_header .homeBtn {
+.quizTaking_header_column:first-child  .header_btn {
+    width: 100%;
+    display: flex;
+}
+
+.quizTaking_header .homeBtn,
+.quizTaking_header .screenBtn {
     padding-top: 5px;
-    margin-right: 60px;
-    font-size: 30px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.quizTaking_header .screenFullBtn {
+    margin: 0px 20px;
 }
 
 .quizTaking_header .quizTitle {
+    height: 100%;
+    padding: 0;
     outline: none;
     border: none;
     background-color: rgb(244, 244, 244);
-    font-size: 30px;
-    width: 70%;
+    font-size: 80px;
+    width: 100%;
+}
+
+.quizTaking_header_column:last-child {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .quizTaking .quizNum {
-    font-size: 80px;
+    font-size: 90px;
 }
 
 .quizNum .quizNum_current {
     color: #E8314E;
-    margin-right: 25px;
+    margin-right: 25px
 }

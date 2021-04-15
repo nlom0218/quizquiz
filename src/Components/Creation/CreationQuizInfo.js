@@ -45,7 +45,7 @@ const CreationQuizInfo = () => {
                     maxLength="50"
                 />
                 <div className="quizInfo_num">
-                    <div className="quizInfo_num_msg">몇 개의 퀴즈를 만드나요? (1~50)</div>
+                    <div className="quizInfo_num_msg">몇 개의 퀴즈를 만드나요? (1~20)</div>
                     <input
                         className="quizInfo_num_input"
                         type="number"

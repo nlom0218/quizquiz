@@ -1,45 +1,21 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { NoQuizInStorage, QuizInStorage, WarningIcon } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr, LS_quizArr, LS_quizRemove, LS_setQuizData1, LS_setQuizData10, LS_setQuizData2, LS_setQuizData3, LS_setQuizData4, LS_setQuizData5, LS_setQuizData6, LS_setQuizData7, LS_setQuizData8, LS_setQuizData9, setLS_quizDate } from '../../localStorage';
+import { LS_quizArr, LS_saveQuizData, setLS_quizData } from '../../localStorage';
 
 const CreationQuizSave = () => {
-    setLS_quizDate()
+    setLS_quizData()
     const [quizArr, setQuizArr] = useState(LS_quizArr())
     const [save, setSave] = useState(false)
 
     const onClickQSBtn = (e) => {
-        const quizzes = LS_getQuizzesArr()
-        const answers = LS_getAnswersArr()
-        const info = LS_getQuizInfo()
-        const quizData = { info, quizzes, answers }
         const { target: { name } } = e
-        if (name === "QS1Btn") {
-            LS_setQuizData1(quizData)
-        } else if (name === "QS2Btn") {
-            LS_setQuizData2(quizData)
-        } else if (name === "QS3Btn") {
-            LS_setQuizData3(quizData)
-        } else if (name === "QS4Btn") {
-            LS_setQuizData4(quizData)
-        } else if (name === "QS5Btn") {
-            LS_setQuizData5(quizData)
-        } else if (name === "QS6Btn") {
-            LS_setQuizData6(quizData)
-        } else if (name === "QS7Btn") {
-            LS_setQuizData7(quizData)
-        } else if (name === "QS8Btn") {
-            LS_setQuizData8(quizData)
-        } else if (name === "QS9Btn") {
-            LS_setQuizData9(quizData)
-        } else if (name === "QS10Btn") {
-            LS_setQuizData10(quizData)
+        if (name) {
+            LS_saveQuizData(name)
+            setSave(true)
         } else {
             return
         }
-        setLS_quizDate()
-        setQuizArr(LS_quizArr())
-        setSave(true)
     }
 
     return (<div className="quizSave-page">

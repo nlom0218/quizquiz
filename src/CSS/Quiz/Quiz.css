@@ -1,8 +1,10 @@
-.quizMode {
-    width: 100%;
-    height: 100%;
-    background-color: #343A40;
+.quiz_page .setting_BgImg {
+    width: 60%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+
+.setting_BgImg .BgImg_img {
+    width: 100px;
+    height: 160px;
 }

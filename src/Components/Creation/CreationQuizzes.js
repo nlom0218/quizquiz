@@ -42,12 +42,14 @@ const CreationQuizzes = ({ num }) => {
                         className={`${item + 1}quiz`}
                         autoComplete='off'
                         required
+                        maxLength="80"
                     />
                     <input
                         type="text"
                         placeholder={`${item + 1}번 정답을 적어주세요`}
                         className={`${item + 1}answer`}
                         required
+                        maxLength="24"
                     />
                 </div>)
             })}

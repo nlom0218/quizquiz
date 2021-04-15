@@ -17,17 +17,22 @@
 }
 
 .quiz_content .content_quiz {
-    font-size: 50px;
+    line-height: 120%;
+    font-size: 70px;
     margin-bottom: 50px;
 }
 
 .quiz_content .content_answer {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items:flex-start;
 }
 
 .content_answer .answer_btn {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 20px;
     margin-right: 30px;
     background-color: #E8314E;
 }
@@ -36,7 +41,7 @@
 }
 
 .content_answer .answer_right {
-    font-size: 45px;
+    font-size: 60px;
     color: #E8314E;
 }
 
@@ -51,9 +56,9 @@
 .quizMoveBtn .beforeBtn,
 .quizMoveBtn .nextBtn{
     padding: 0px;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;

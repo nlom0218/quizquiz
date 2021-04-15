@@ -1,27 +1,48 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router';
 import { DelQuiz, EditQuiz, Play, Start } from '../../icon';
-import { del_LS_quizData, LS_quizArr, setLS_quizDate } from '../../localStorage';
+import { del_LS_quizData, LS_quizArr, LS_setQuiz, LS_setQuizInfo, seleted_LS_quizData, setLS_quizData, setLS_quizDate } from '../../localStorage';
 
 const QuizStorageIntro = () => {
+    setLS_quizData()
     const [quizArr, setQuizArr] = useState(LS_quizArr())
+    const [quiz, setQuiz] = useState(false)
+    const [edit, setEdit] = useState(false)
+
+    console.log(LS_quizArr());
+
+    const getDivNum = (e) => {
+        let { target: { parentNode: { parentNode: { id: num1 } } } } = e
+        let { target: { parentNode: { id: num2 } } } = e
+        num1 = parseInt(num1)
+        num2 = parseInt(num2)
+        const num = num1 ? num1 : num2
+        return num
+    }
 
     const onClickDel = (e) => {
-        let { target: { parentNode: { parentNode: { id: num } } } } = e
-        console.log(num);
-        num = parseInt(num)
-        if (num) {
-            if (window.confirm(`저장소${num}에 저장된 퀴즈를 삭제하시겠습니까?`)) {
-                del_LS_quizData(num)
-                setLS_quizDate()
-                console.log(LS_quizArr());
-                setQuizArr(LS_quizArr())
-                console.log(LS_quizArr());
-            } else {
-                return
-            }
-        } else {
-            return
+        const num = getDivNum(e)
+        if (window.confirm(`저장소${num}에 저장된 퀴즈를 삭제하시겠습니까?`)) {
+            del_LS_quizData(num)
+            setLS_quizData()
+            setQuizArr(LS_quizArr())
         }
+    }
+
+    const onClickPlay = (e) => {
+        const num = getDivNum(e)
+        const QuizData = seleted_LS_quizData(num)
+        LS_setQuiz(QuizData.quizzes, QuizData.answers)
+        LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
+        setQuiz(true)
+    }
+
+    const onClickEdit = (e) => {
+        const num = getDivNum(e)
+        const QuizData = seleted_LS_quizData(num)
+        LS_setQuiz(QuizData.quizzes, QuizData.answers)
+        LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
+        setEdit(true)
     }
 
     return (<div className="quizStorage_intro">
@@ -45,10 +66,10 @@ const QuizStorageIntro = () => {
                         </div>
                         {quizData && <div className="quiz_funBtn">
                             <div className="quiz_funBtn_column">
-                                <div className="paly_btn">{Play}</div>
+                                <div className="paly_btn" id={index + 1} onClick={onClickPlay} > {Play}</div>
                             </div>
                             <div className="quiz_funBtn_column">
-                                <div className="edit_btn" id="edit">{EditQuiz}</div>
+                                <div className="edit_btn" id={index + 1} onClick={onClickEdit}>{EditQuiz}</div>
                                 <div className="del_btn" id={index + 1} onClick={onClickDel}>{DelQuiz}</div>
                             </div>
                         </div>}
@@ -73,10 +94,10 @@ const QuizStorageIntro = () => {
                         </div>
                         {quizData && <div className="quiz_funBtn">
                             <div className="quiz_funBtn_column">
-                                <div className="paly_btn">{Play}</div>
+                                <div className="paly_btn" id={index + 1} onClick={onClickPlay}>{Play}</div>
                             </div>
                             <div className="quiz_funBtn_column">
-                                <div className="edit_btn" id="edit">{EditQuiz}</div>
+                                <div className="edit_btn" id={index + 1} onClick={onClickEdit}>{EditQuiz}</div>
                                 <div className="del_btn" id={index + 1} onClick={onClickDel}>{DelQuiz}</div>
                             </div>
                         </div>}
@@ -84,6 +105,8 @@ const QuizStorageIntro = () => {
                 })}
             </ul>
         </div>
+        {quiz && <Redirect push to="/quiz" />}
+        {edit && <Redirect push to="/quiz/edit" />}
     </div>);
 }
 

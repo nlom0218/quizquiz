@@ -16,7 +16,7 @@
 
 .quizInfo_form input {
     outline: none;
-    font-size: 18px;
+    font-size: 22px;
     
 }
 
@@ -39,7 +39,7 @@
 
 .quizInfo_num .quizInfo_num_msg {
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .quizInfo_num .quizInfo_num_input {
@@ -83,7 +83,7 @@
 .quizAndAnswer_warning .warning_msg {
     background-color: #E8314E;
     color: rgb(244, 244, 244);
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     padding: 5px 20px;
     border-radius: 10px;
@@ -110,7 +110,7 @@
     border-bottom: 1px solid #878B8E;
     padding-bottom: 5px;
     padding-left: 10px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .quizAndAnswer_input input:first-child {

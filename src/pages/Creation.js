@@ -5,15 +5,21 @@ import CreationQuizInfo from '../Components/Creation/CreationQuizInfo';
 import CreationCompletion from '../Components/Creation/CreationCompletion';
 
 import CreationQuizSave from '../Components/Creation/CreationQuizSave';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const Creation = () => {
-    return (<div className="creation_page main">
-        <Switch>
-            <Route exact path="/creation" > <CreationQuizInfo /></Route >
-            <Route path="/creation/completion"><CreationCompletion /></Route>
-            <Route path="/creation/quizsave"><CreationQuizSave /></Route>
-        </Switch >
-    </div >);
+    return (<>
+        <Header />
+        <div className="creation_page main">
+            <Switch>
+                <Route exact path="/creation" > <CreationQuizInfo /></Route >
+                <Route path="/creation/completion"><CreationCompletion /></Route>
+                <Route path="/creation/quizsave"><CreationQuizSave /></Route>
+            </Switch >
+        </div >
+        <Footer />
+    </>);
 }
 
 export default connect()(Creation);

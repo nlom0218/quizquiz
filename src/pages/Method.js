@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router';
 import { Link } from 'react-router-dom';
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 // img
 import img0 from "../Images/CreationImg/img0.png"
 import img1 from "../Images/CreationImg/img1.png"
@@ -23,19 +25,23 @@ const Method = () => {
     //     setImg(imgArr[num])
     // }, 3000)
 
-    return (<div className="method_page main">
-        <Route exact path="/method">
-            <div className="method_intro">
-                {/* <div className="intro_msg">누구나 쉽게 퀴즈를 만들 수 있습니다</div> */}
-                <div className="intro_img">
-                    <img src={img} alt="" />
+    return (<>
+        <Header />
+        <div className="method_page main">
+            <Route exact path="/method">
+                <div className="method_intro">
+                    {/* <div className="intro_msg">누구나 쉽게 퀴즈를 만들 수 있습니다</div> */}
+                    <div className="intro_img">
+                        <img src={img} alt="" />
+                    </div>
+                    <Link to="/creation">
+                        <button className="intro_btn btn">퀴즈 만들기</button>
+                    </Link>
                 </div>
-                <Link to="/creation">
-                    <button className="intro_btn btn">퀴즈 만들기</button>
-                </Link>
-            </div>
-        </Route>
-    </div>);
+            </Route>
+        </div>
+        <Footer />
+    </>);
 }
 
 export default Method;

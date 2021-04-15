@@ -20,18 +20,16 @@ import Notice from './pages/Notice';
 function App() {
   return (
     <div className="App">
-      <Header />
       <Switch>
         <Route exact path="/"><Home /></Route>
         <Route path="/method"><Method /></Route>
         <Route path="/creation"><Creation /></Route>
         <Route path="/storage"><QuizStorage /></Route>
         <Route path="/notice"><Notice /></Route>
-        <Route exact path="/quiz"><Quiz /></Route>
-        <Route path="/quiz/start"><QuizTaking /></Route>
-        <Route path="/quiz/finish"><QuizFinish /></Route>
+        {/* <Route path="/quiz/start"><QuizTaking /></Route>
+        <Route path="/quiz/finish"><QuizFinish /></Route> */}
+        <Route path="/quiz"><Quiz /></Route>
       </Switch>
-      <Footer />
     </div>
   );
 }

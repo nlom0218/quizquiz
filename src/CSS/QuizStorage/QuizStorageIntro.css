@@ -88,6 +88,7 @@
 }
 
 .quizItem .quizItem_quizTitle {
+    line-height: 130%;
     width: 100%;
     display: flex;
     justify-content: flex-start;

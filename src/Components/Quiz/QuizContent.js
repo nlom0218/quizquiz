@@ -8,6 +8,10 @@ const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClic
     const answers = LS_getAnswersArr()
     const { numOfQuiz } = LS_getQuizInfo()
 
+    const onKeyDown = (e) => {
+        console.log(e.keyCode);
+    }
+
     return (<div className="quizContainer">
         <div className="quiz_content">
             <div className="content_quiz">{quizzes[num]}</div>
@@ -23,6 +27,7 @@ const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClic
                 name="beforeBtn"
                 className="btn beforeBtn"
                 onClick={onClickBeforeBtn}
+                onKeyPress={onKeyDown}
             >{LeftIcon}</button>
             <button
                 name="nextBtn"
