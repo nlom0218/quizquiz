@@ -6,7 +6,6 @@ import QuizNav from './QuizNav';
 const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
     const quizzes = LS_getQuizzesArr()
     const answers = LS_getAnswersArr()
-    const { numOfQuiz } = LS_getQuizInfo()
 
     const onKeyDown = (e) => {
         console.log(e.keyCode);
@@ -34,7 +33,6 @@ const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClic
                 className="btn nextBtn"
                 onClick={onClickNextBtn}
             >{RightIcon}</button>
-            {num === numOfQuiz - 1 && <QuizNav />}
         </div>
     </div>);
 }

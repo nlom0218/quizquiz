@@ -17,7 +17,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 10px 7px 21px -10px #000000;
+    -webkit-box-shadow: 9px 10px 16px 1px rgba(0,0,0,0.89); 
+    box-shadow: 9px 10px 16px 1px rgba(0,0,0,0.89);
 }
 
 .quizTaking .quizTaking_header {
@@ -44,11 +45,13 @@
     display: flex;
 }
 
-.quizTaking_header .homeBtn,
-.quizTaking_header .screenBtn {
+.quizTaking_header .navBtn {
     padding-top: 5px;
     font-size: 40px;
     cursor: pointer;
+}
+.quizTaking_header .homeBtn {
+    margin-right: 20px;
 }
 
 .quizTaking_header .screenFullBtn {
@@ -60,6 +63,7 @@
     padding: 0;
     outline: none;
     border: none;
+    
     background-color: rgb(244, 244, 244);
     font-size: 80px;
     width: 100%;

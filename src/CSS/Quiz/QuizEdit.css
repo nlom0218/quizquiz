@@ -1,0 +1,129 @@
+.quiz_page .quiz_edit {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz_edit .edit_introMsg {
+    width: 100%;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz_edit .edit_warning {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.edit_warning .warning_icon {
+    margin-right: 15px;
+    color: #E8314E;
+}
+
+.edit_warning .warning_msg {
+    background-color: #E8314E;
+    color: rgb(244, 244, 244);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.quiz_edit input {
+    font-size: 22px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #878B8E;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    
+}
+
+.quiz_edit .edit_title {
+    width: 100%;
+    margin: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.edit_title .edit_title_des {
+    margin-right: 30px;
+    color: #FAFDFF;
+    background-color: #343A40;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.edit_title .edit_title_value {
+    width: 50%;
+}
+
+.quiz_edit .edit_quizAndAnserList {
+    width: 80%;
+}
+
+ .edit_quizAndAnserList .edit_quizAndAnswer {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.edit_quizAndAnserList .edit_quizAndAnser_des {
+    display: flex;
+    justify-content: flex-start;
+    width: 10%;
+}
+.edit_quizAndAnser_des div {
+    color: #FAFDFF;
+    background-color: #343A40;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.edit_quizAndAnserList .edit_quiz_value {
+    display: flex;
+    justify-content: flex-start;
+    width: 65%;
+}
+.edit_quiz_value input {
+    width: 90%;
+}
+
+.edit_quizAndAnserList .edit_answer_value {
+    display: flex;
+    justify-content: flex-start;
+    width: 20%;
+}
+.edit_answer_value input {
+    width: 90%;
+} 
+
+.edit_quizAndAnserList .edit_del {
+    width: 5%;
+    display: flex;
+    justify-content: flex-end;
+}
+.edit_del .del_btn {
+    color: #ff3859;
+    font-size: 20px;
+    /* border-radius: 50%; */
+}
+
+.quiz_edit .add_btn {
+    font-size: 40px;
+    cursor: pointer;
+    color: #343A40;
+    margin-bottom: 30px;
+}

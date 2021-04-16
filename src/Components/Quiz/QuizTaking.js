@@ -1,8 +1,7 @@
-import { faCompress } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { HomeIcon, FullScr, SmallScr } from '../../icon';
+import { HomeIcon, FullScr, SmallScr, QuizStorage } from '../../icon';
 import { LS_getQuizInfo } from '../../localStorage';
 import QuizContent from './QuizContent';
 
@@ -10,7 +9,11 @@ const QuizTaking = () => {
     const [num, setNum] = useState(0)
     const [openAnswer, setOpenAnswer] = useState(false)
 
-    const BgImg = JSON.parse(localStorage.getItem("quizBgImg"))
+    useEffect(() => {
+        document.querySelector(".quizMode").webkitRequestFullscreen()
+    }, [])
+
+    const { name } = JSON.parse(localStorage.getItem("quizBgImg"))
 
     const { quizTitle, numOfQuiz } = LS_getQuizInfo()
 
@@ -53,14 +56,19 @@ const QuizTaking = () => {
         }
     }
 
-    return (<div className="quizMode" style={{ backgroundImage: `url(${BgImg})` }}>
+    return (<div className="quizMode" style={{
+        backgroundImage: `url(${name})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover"
+    }}>
         <div className="quizTaking">
             <div className="quizTaking_header">
                 <div className="quizTaking_header_column">
                     <div className="header_btn">
-                        <div className="homeBtn"><Link to="/">{HomeIcon}</Link></div>
-                        <div className="screenFullBtn screenBtn" id="fullScr" onClick={onClickScrBtn}>{FullScr}</div>
-                        <div className="screenSmallBtn screenBtn" id="smallScr" onClick={onClickScrBtn}>{SmallScr}</div>
+                        <div className="homeBtn navBtn"><Link to="/">{HomeIcon}</Link></div>
+                        <div className="StorageBtn navBtn"><Link to="/storage">{QuizStorage}</Link></div>
+                        <div className="screenFullBtn navBtn" id="fullScr" onClick={onClickScrBtn}>{FullScr}</div>
+                        <div className="screenSmallBtn navBtn" id="smallScr" onClick={onClickScrBtn}>{SmallScr}</div>
                     </div>
                     <input readOnly value={quizTitle} className="quizTitle" />
                 </div>

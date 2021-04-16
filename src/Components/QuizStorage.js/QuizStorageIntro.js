@@ -9,8 +9,6 @@ const QuizStorageIntro = () => {
     const [quiz, setQuiz] = useState(false)
     const [edit, setEdit] = useState(false)
 
-    console.log(LS_quizArr());
-
     const getDivNum = (e) => {
         let { target: { parentNode: { parentNode: { id: num1 } } } } = e
         let { target: { parentNode: { id: num2 } } } = e
@@ -39,10 +37,14 @@ const QuizStorageIntro = () => {
 
     const onClickEdit = (e) => {
         const num = getDivNum(e)
-        const QuizData = seleted_LS_quizData(num)
-        LS_setQuiz(QuizData.quizzes, QuizData.answers)
-        LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
-        setEdit(true)
+        if (num) {
+            const QuizData = seleted_LS_quizData(num)
+            LS_setQuiz(QuizData.quizzes, QuizData.answers)
+            LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
+            setEdit(true)
+        } else {
+            return
+        }
     }
 
     return (<div className="quizStorage_intro">

@@ -66,6 +66,11 @@
     background-color: #343A40;
     color: rgb(244, 244, 244)
 }
+.quizMoveBtn .beforeBtn:hover,
+.quizMoveBtn .nextBtn:hover{
+    background-color: #1f2124;
+    color: rgb(255, 255, 255);
+}
 
 .quizMoveBtn .beforeBtn {
     margin-right: 10px;

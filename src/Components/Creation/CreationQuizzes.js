@@ -50,6 +50,7 @@ const CreationQuizzes = ({ num }) => {
                         className={`${item + 1}answer`}
                         required
                         maxLength="24"
+                        autoComplete='off'
                     />
                 </div>)
             })}
