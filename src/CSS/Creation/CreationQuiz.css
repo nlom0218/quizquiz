@@ -30,7 +30,7 @@
 }
 
 .quizInfo_form .quizInfo_num {
-    width: 40%;
+    width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;

@@ -1,6 +1,5 @@
 .quiz_page .setting_BgImg {
-    margin-top: 50px;
-    width: 100%;
+    width: 50%;
     display: flex;
 }
 
@@ -10,8 +9,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* 나중에 삭제하기 밑에꺼 */
-    margin-bottom: 40px;
 }
 
 .BgImg_seletForm .seletFrom_msg {
@@ -20,6 +17,7 @@
 
 .BgImg_seletForm .seletForm_column {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -55,9 +53,18 @@
 }
 
 .BgImg_seletForm .seletFrom_btn {
-    width: 15%;
-    padding: 10px 0px;
+    padding: 10px 15px;
     font-size: 18px;
     display: flex;
     justify-content: center;
+    background-color: rgb(128, 184, 128);
+}
+.BgImg_seletForm .seletFrom_btn:hover {
+    background-color: rgb(112, 174, 112);
+}
+
+
+
+.BgImg_seletForm .seleted {
+    background-color: rgb(112, 174, 112);
 }

@@ -49,7 +49,7 @@ const CreationQuizzes = ({ num }) => {
                         placeholder={`${item + 1}번 정답을 적어주세요`}
                         className={`${item + 1}answer`}
                         required
-                        maxLength="24"
+                        maxLength="18"
                         autoComplete='off'
                     />
                 </div>)

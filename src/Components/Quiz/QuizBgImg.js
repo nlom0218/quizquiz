@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { BgImgArr } from '../../bgImg';
 import { LeftIcon, RightIcon } from '../../icon';
+import BgImg1 from "../../Images/BackgroundImg/BgImg1.jpg"
 
 const QuizBgImg = () => {
-    const quizBgImg = JSON.parse(localStorage.getItem("quizBgImg"));
-    let { num: imgNum, name } = quizBgImg
+    let quizSetting = JSON.parse(localStorage.getItem("quizSetting"));
+    quizSetting = quizSetting ? quizSetting : { num: 0, BgName: BgImg1, timer: 0 }
+    let { num: imgNum, BgName } = quizSetting
     imgNum = parseInt(imgNum)
     const [num, setNum] = useState(imgNum)
     const [load, setLoad] = useState(true)
 
     const onClickBgSeletBtn = (e) => {
         const { target: { name, dataset: { num } } } = e
-        localStorage.setItem("quizBgImg", JSON.stringify({ name, num }))
+        localStorage.setItem("quizSetting", JSON.stringify({ ...quizSetting, ...{ BgName: name, num } }))
         setLoad(pre => !pre)
     }
 
@@ -46,7 +48,7 @@ const QuizBgImg = () => {
                     {RightIcon}
                 </div>
             </div>
-            {BgImgArr[num] !== name ? <button
+            {BgImgArr[num] !== BgName ? <button
                 className="seletFrom_btn btn"
                 name={BgImgArr[num]}
                 data-num={BgImgArr.indexOf(BgImgArr[num])}
@@ -54,7 +56,7 @@ const QuizBgImg = () => {
             >
                 선택하기
             </button> : <button
-                className="seletFrom_btn btn"
+                className="seletFrom_btn seleted btn"
                 name={BgImgArr[num]}
                 data-num={BgImgArr.indexOf(BgImgArr[num])}
                 onClick={onClickBgSeletBtn}

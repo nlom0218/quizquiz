@@ -172,5 +172,4 @@ export const seleted_LS_quizData = (num) => {
 function init() {
     setLS_quizData()
 }
-
 init()

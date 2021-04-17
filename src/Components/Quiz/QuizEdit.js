@@ -137,7 +137,7 @@ const QuizEdit = () => {
                                     id={index}
                                     name={`QS${storage}Btn`}
                                     onChange={onChangeData("answer")}
-                                    maxLength="24"
+                                    maxLength="18"
                                     autoComplete='off'
                                 />
                             </div>

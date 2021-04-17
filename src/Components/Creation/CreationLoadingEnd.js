@@ -31,7 +31,7 @@ const CreationLoadingEnd = () => {
                 <div className="save_icon">{Save}</div>
                 <ul className="save_msg">
                     <li>{ListIcon} 퀴즈 저장소에 저장</li>
-                    <li>{ListIcon} 저장소에서 퀴즈를 수정 및 삭제 가능</li>
+                    <li>{ListIcon} 퀴즈 수정 및 삭제 가능</li>
                     <li>{ListIcon} 퀴즈 저장소 선택화면으로 이동</li>
                 </ul>
                 <Link to="/creation/quizsave">

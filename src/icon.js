@@ -1,10 +1,10 @@
-import { faAngellist, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faArchive, faChevronLeft, faChevronRight, faCompress, faEdit, faEnvelope, faEnvelopeOpen, faEnvelopeOpenText, faExclamationCircle, faExpand, faHome, faPlay, faPlayCircle, faPlusSquare, faSave, faSun, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAngellist, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faArchive, faChevronLeft, faChevronRight, faCompress, faEdit, faEnvelope, faEnvelopeOpen, faEnvelopeOpenText, faExclamationCircle, faExpand, faHome, faMarker, faPlay, faPlayCircle, faPlusSquare, faSave, faStopwatch, faSun, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const HomeIcon = <FontAwesomeIcon icon={faHome} />
 export const Instagram = <FontAwesomeIcon icon={faInstagram} />
-export const WebLogo = <FontAwesomeIcon icon={faEdit} size="2x" />
+export const WebLogo = <FontAwesomeIcon icon={faMarker} size="2x" />
 export const Sun = <FontAwesomeIcon icon={faSun} size="2x" />
 export const Save = <FontAwesomeIcon icon={faSave} size="8x" />
 export const Start = <FontAwesomeIcon icon={faPlayCircle} size="8x" />
@@ -21,3 +21,5 @@ export const FullScr = <FontAwesomeIcon icon={faExpand} />
 export const SmallScr = <FontAwesomeIcon icon={faCompress} />
 export const QuizStorage = <FontAwesomeIcon icon={faArchive} />
 export const AddQuiz = <FontAwesomeIcon icon={faPlusSquare} />
+export const Timer = <FontAwesomeIcon icon={faStopwatch} />
+export const Github = <FontAwesomeIcon icon={faGithub} />

@@ -6,14 +6,28 @@ import { LS_getQuizInfo } from '../../localStorage';
 import QuizContent from './QuizContent';
 
 const QuizTaking = () => {
+    const { timer: LS_quizSettingTimer } = JSON.parse(localStorage.getItem("quizSetting"))
+
     const [num, setNum] = useState(0)
     const [openAnswer, setOpenAnswer] = useState(false)
+    const [timer, setTimer] = useState(LS_quizSettingTimer)
 
     useEffect(() => {
         document.querySelector(".quizMode").webkitRequestFullscreen()
     }, [])
 
-    const { name } = JSON.parse(localStorage.getItem("quizBgImg"))
+    useEffect(() => {
+        const countDown = setInterval(() => {
+            if (timer > 0) {
+                setTimer(timer - 1)
+            } else {
+                clearInterval(countDown)
+            }
+        }, 1000)
+        return () => clearInterval(countDown)
+    }, [timer])
+
+    const { BgName } = JSON.parse(localStorage.getItem("quizSetting"))
 
     const { quizTitle, numOfQuiz } = LS_getQuizInfo()
 
@@ -24,6 +38,7 @@ const QuizTaking = () => {
             return
         }
         setNum(num - 1)
+        setTimer(LS_quizSettingTimer)
     }
 
     const onClickNextBtn = () => {
@@ -33,6 +48,7 @@ const QuizTaking = () => {
             return
         }
         setNum(num + 1)
+        setTimer(LS_quizSettingTimer)
     }
 
     const onClickAnswerBtn = () => {
@@ -43,21 +59,21 @@ const QuizTaking = () => {
         console.dir(e.target.parentNode);
         let { target: { parentNode: { parentNode: { id: id1 } } } } = e
         let { target: { parentNode: { id: id2 } } } = e
-        const name = id1 ? id1 : id2
-        return name
+        const BtnName = id1 ? id1 : id2
+        return BtnName
     }
 
     const onClickScrBtn = (e) => {
-        const name = getScr(e)
-        if (name === "smallScr") {
+        const BtnName = getScr(e)
+        if (BtnName === "smallScr") {
             document.webkitExitFullscreen()
-        } else if (name === "fullScr") {
+        } else if (BtnName === "fullScr") {
             document.querySelector(".quizMode").webkitRequestFullscreen()
         }
     }
 
     return (<div className="quizMode" style={{
-        backgroundImage: `url(${name})`,
+        backgroundImage: `url(${BgName})`,
         backgroundPosition: "center",
         backgroundSize: "cover"
     }}>
@@ -76,6 +92,9 @@ const QuizTaking = () => {
                     <div className="quizNum">
                         <span className="quizNum_current">{num + 1}</span>
                         <span className="quizNum_all">/ {numOfQuiz}</span>
+                    </div>
+                    <div className="quizTimer">
+                        {LS_quizSettingTimer === 0 ? null : timer === 0 ? "시간종료" : `${timer}초`}
                     </div>
                 </div>
             </div>

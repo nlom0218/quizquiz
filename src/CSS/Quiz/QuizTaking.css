@@ -47,7 +47,7 @@
 
 .quizTaking_header .navBtn {
     padding-top: 5px;
-    font-size: 40px;
+    font-size: 4vh;
     cursor: pointer;
 }
 .quizTaking_header .homeBtn {
@@ -63,21 +63,29 @@
     padding: 0;
     outline: none;
     border: none;
-    
     background-color: rgb(244, 244, 244);
-    font-size: 80px;
+    font-size: 8vh;
     width: 100%;
 }
 
 .quizTaking_header_column:last-child {
     width: 25%;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.quizTaking_header_column .quizTimer {
+    margin-top: 10px;
+    font-size: 5vh;
+    font-weight: 600;
+    color: firebrick;
 }
 
 .quizTaking .quizNum {
-    font-size: 90px;
+    font-size: 9vh;
 }
 
 .quizNum .quizNum_current {

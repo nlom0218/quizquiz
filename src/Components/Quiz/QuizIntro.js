@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Footer from '../Footer';
 import Header from '../Header';
 import QuizBgImg from './QuizBgImg';
+import QuizTimer from './QuizTimer';
 
 
 const QuizIntro = () => {
@@ -19,7 +20,10 @@ const QuizIntro = () => {
         <div className="quiz_page main">
             <div className="quiz_intro">
                 <div className="quiz_introMsg">퀴즈 설정하기</div>
-                <QuizBgImg />
+                <div className="quiz_setting">
+                    <QuizBgImg />
+                    <QuizTimer />
+                </div>
                 <button className="btn" onClick={onClickStart}>
                     퀴즈 시작하기
             </button>
