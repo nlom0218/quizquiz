@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 2.5vh;
 }
 
 .setting_timer .timer_img {
@@ -19,9 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: 150px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    font-size: 18vh;
     color: rgb(83, 204, 225);
 }
 
@@ -35,12 +35,12 @@
 
 .timer_form input {
     width: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .timer_form .timer_current {
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 2vh;
 }

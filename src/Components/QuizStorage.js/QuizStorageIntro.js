@@ -1,3 +1,4 @@
+import { faIgloo } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { DelQuiz, EditQuiz, Play, Start } from '../../icon';
@@ -29,10 +30,14 @@ const QuizStorageIntro = () => {
 
     const onClickPlay = (e) => {
         const num = getDivNum(e)
-        const QuizData = seleted_LS_quizData(num)
-        LS_setQuiz(QuizData.quizzes, QuizData.answers)
-        LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
-        setQuiz(true)
+        if (num) {
+            const QuizData = seleted_LS_quizData(num)
+            LS_setQuiz(QuizData.quizzes, QuizData.answers)
+            LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
+            setQuiz(true)
+        } else {
+            return
+        }
     }
 
     const onClickEdit = (e) => {

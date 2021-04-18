@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import { ListIcon, Save, Start } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr, LS_setQuizDate1, LS_setQuizDate2 } from '../../localStorage';
 
 const CreationLoadingEnd = () => {
     const [start, setStart] = useState(false)

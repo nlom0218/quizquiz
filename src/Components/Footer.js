@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="explan-me_item">ABOUT AUTHOR</div>
                 <div className="explan-me_name explan-me_item">
                     <div className="explan-me_name_list">NAME :</div>
-                    <div className="explan-me_name_content">초부득삼</div>
+                    <div className="explan-me_name_content">KHD</div>
                 </div>
                 <div className="explan-me_email explan-me_item">
                     <div className="explan-me_email_list">E-MAIL :</div>

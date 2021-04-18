@@ -24,10 +24,10 @@ const QuizIntro = () => {
                     <QuizBgImg />
                     <QuizTimer />
                 </div>
-                <button className="btn" onClick={onClickStart}>
-                    퀴즈 시작하기
-            </button>
             </div>
+            <button className="btn" onClick={onClickStart}>
+                퀴즈 시작하기
+            </button>
         </div >
         <Footer />
         { start && <Redirect push to="/quiz/start" />}

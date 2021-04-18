@@ -1,0 +1,49 @@
+.home_contents .home_notice {
+    width: 100%;
+    margin-top: 3vh;
+    padding-top: 3vh;
+    border-top: 2px solid #E9ECEF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_notice .home_notice_column:first-child {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.home_notice .home_notice_icon {
+    margin-right: 10px;
+    font-size: 4.5vh;
+    color: rgb(64, 134, 220);
+}
+
+.home_notice .home_notice_msg {
+    font-size: 3vh;
+    font-weight: 600;
+}
+
+.home_notice .home_notice_writing {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.home_notice .writing_icon {
+    margin-right: 10px;
+    font-size: 3vh;
+    color: rgb(64, 134, 220);;
+}
+
+.home_notice .writing_list {
+    font-size: 2vh;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}

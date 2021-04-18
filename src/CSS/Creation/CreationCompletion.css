@@ -3,12 +3,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px 0px;
+    justify-content: flex-start;
+    /* margin: 5vh 0px; */
 }
 
 .creation_complete .quizBtn{
     width: 80%;
-    margin-top: 40px;
+    margin-top: 4vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,13 +33,13 @@
 }
 
 .start_icon, .save_icon {
-    margin: 40px 0px 30px 0px;
+    margin: 4vh 0px 3vh 0px;
     color: rgb(244, 244, 244)
 }
 
 .quizBtn_start .start_msg,
 .quizBtn_save .save_msg {
-    margin-top: 20px;
+    margin-top: 2vh;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -48,16 +49,16 @@
 
 .start_msg li,
 .save_msg li {
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 1.5vh;
+    font-size: 2.2vh;
     font-weight: 500;
     color: rgb(244, 244, 244);
 }
 
 .quizBtn_start .startBtn,
 .quizBtn_save .saveBtn {
-    font-size: 24px;
-    padding: 10px 80px;
+    font-size: 3vh;
+    padding: 1.2vh 80px;
     position: relative;
     bottom: -20px;
     color: #111827;

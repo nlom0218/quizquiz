@@ -1,5 +1,29 @@
-import { faAngellist, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faArchive, faChevronLeft, faChevronRight, faCompress, faEdit, faEnvelope, faEnvelopeOpen, faEnvelopeOpenText, faExclamationCircle, faExpand, faHome, faMarker, faPlay, faPlayCircle, faPlusSquare, faSave, faStopwatch, faSun, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAngellist, faChrome, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import {
+    faArchive,
+    faArrowLeft,
+    faArrowRight,
+    faBell,
+    faChevronLeft,
+    faChevronRight,
+    faCompress,
+    faEdit,
+    faEnvelopeOpen,
+    faEnvelopeOpenText,
+    faExclamationCircle,
+    faExpand,
+    faHome,
+    faList,
+    faMarker,
+    faPlay,
+    faPlayCircle,
+    faPlusSquare,
+    faSave,
+    faStickyNote,
+    faStopwatch,
+    faSun,
+    faTrashAlt
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const HomeIcon = <FontAwesomeIcon icon={faHome} />
@@ -23,3 +47,9 @@ export const QuizStorage = <FontAwesomeIcon icon={faArchive} />
 export const AddQuiz = <FontAwesomeIcon icon={faPlusSquare} />
 export const Timer = <FontAwesomeIcon icon={faStopwatch} />
 export const Github = <FontAwesomeIcon icon={faGithub} />
+export const Chrome = <FontAwesomeIcon icon={faChrome} />
+export const Alarm = <FontAwesomeIcon icon={faBell} />
+export const Note = <FontAwesomeIcon icon={faStickyNote} />
+export const List = <FontAwesomeIcon icon={faList} />
+export const LeftArrow = <FontAwesomeIcon icon={faArrowLeft} />
+export const RightArrow = <FontAwesomeIcon icon={faArrowRight} />

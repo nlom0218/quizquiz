@@ -8,7 +8,7 @@
 
 .quiz_edit .edit_introMsg {
     width: 100%;
-    font-size: 36px;
+    font-size: 4vh;
     font-weight: 700;
     display: flex;
     justify-content: center;
@@ -19,48 +19,53 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 4vh;
 }
 
 .edit_warning .warning_icon {
     margin-right: 15px;
     color: #E8314E;
+    font-size: 2vh;
 }
 
 .edit_warning .warning_msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #E8314E;
     color: rgb(244, 244, 244);
-    font-size: 24px;
+    font-size: 2.5vh;
     font-weight: 600;
-    padding: 5px 20px;
+    padding: 0.5vh 20px;
     border-radius: 10px;
 }
 
 .quiz_edit input {
-    font-size: 22px;
+    font-size: 2.5vh;
     outline: none;
     border: none;
     border-bottom: 1px solid #878B8E;
-    padding-bottom: 5px;
+    padding-bottom: 0.8vh;
     padding-left: 10px;
     
 }
 
 .quiz_edit .edit_title {
     width: 100%;
-    margin: 40px 0px;
+    margin: 5vh 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 2.5vh;
 }
 
 .edit_title .edit_title_des {
     margin-right: 30px;
     color: #FAFDFF;
     background-color: #343A40;
-    padding: 5px 10px;
+    padding: 0.8vh 12px;
     border-radius: 10px;
+    font-size: 2.2vh;
 }
 
 .edit_title .edit_title_value {
@@ -68,11 +73,11 @@
 }
 
 .quiz_edit .edit_quizAndAnserList {
-    width: 80%;
+    width: 100%;
 }
 
  .edit_quizAndAnserList .edit_quizAndAnswer {
-    margin-bottom: 30px;
+    margin-bottom: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,9 +92,9 @@
 .edit_quizAndAnser_des div {
     color: #FAFDFF;
     background-color: #343A40;
-    padding: 5px 10px;
+    padding: 0.8vh 12px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 2.2vh;
 }
 
 .edit_quizAndAnserList .edit_quiz_value {
@@ -117,13 +122,13 @@
 }
 .edit_del .del_btn {
     color: #ff3859;
-    font-size: 20px;
+    font-size: 2.2vh;
     /* border-radius: 50%; */
 }
 
 .quiz_edit .add_btn {
-    font-size: 40px;
+    font-size: 4.5vh;
     cursor: pointer;
     color: #343A40;
-    margin-bottom: 30px;
+    margin-bottom: 5vh;
 }
