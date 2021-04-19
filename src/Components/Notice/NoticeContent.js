@@ -27,6 +27,7 @@ const NoticeContent = () => {
                 return <div className="list_item" key={index}>📝 {item}</div>
             })}</div>
             <div className="text_desc desc4">{content.desc4}</div>
+            <div className="text_desc desc4">{content.desc5}</div>
             <div className="text_list list2">{content.list2}</div>
         </div>
         <div className="content_footNavBtn">
