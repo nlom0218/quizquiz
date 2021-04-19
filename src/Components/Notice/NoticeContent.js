@@ -7,7 +7,7 @@ import { LeftArrow, List, RightArrow } from '../../icon';
 const NoticeContent = () => {
     const { id } = useParams()
     const contentsArr = contents
-    const content = contentsArr.filter((item) => item.id === parseInt(id)).[0]
+    let content = contentsArr.filter((item) => item.id === parseInt(id))[0]
     const index = contents.indexOf(content)
 
     return (<div className="notice_content">
