@@ -3,7 +3,6 @@ import { Chrome } from '../../icon';
 
 const HomeChrome = () => {
     const browser = window.chrome ? "chrome" : null
-    console.log(browser);
 
     return (<div className="home_chrome">
         <div className="chrome_column">
