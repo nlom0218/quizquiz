@@ -43,7 +43,6 @@ const Footer = () => {
                     <div className="explan-web_log_icon">{Sun}</div>
                     <div className="explan-web_log_msg">2021- 2021 (v1.0.0)</div>
                 </div>
-                <div> hi</div>
             </div>
         </div>
     );
