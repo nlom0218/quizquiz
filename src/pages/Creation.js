@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import CreationQuizInfo from '../Components/Creation/CreationQuizInfo';
 import CreationCompletion from '../Components/Creation/CreationCompletion';
 

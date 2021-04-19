@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { LeftIcon, RightIcon } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr } from '../../localStorage';
-import QuizNav from './QuizNav';
+import { LS_getAnswersArr, LS_getQuizzesArr } from '../../localStorage';
 
 const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
     const quizzes = LS_getQuizzesArr()

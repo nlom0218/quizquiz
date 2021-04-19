@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { AddQuiz, DelQuiz, WarningIcon } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr, LS_saveQuizData, LS_setQuiz, LS_setQuizInfo, setLS_quizData } from '../../localStorage';
+import { LS_getAnswersArr, LS_getQuizInfo, LS_getQuizzesArr, LS_saveQuizData, LS_setQuiz, LS_setQuizInfo } from '../../localStorage';
 import Footer from '../Footer';
 import Header from '../Header';
 
