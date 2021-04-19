@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const CreationLoading = () => {
-    return (<div className="creation-loading">
-        <div className="loading_img">
-            <div className="loading_dot"></div>
-            <div className="loading_dot"></div>
-            <div className="loading_dot"></div>
+    const [onload, setOnload] = useState(0)
+    const [loadEnd, setLoadEnd] = useState(false)
+
+    useEffect(() => {
+        if (onload < 30) {
+            setTimeout(() => { setOnload(onload + 1) }, 100)
+        } else if (onload < 60) {
+            setTimeout(() => { setOnload(onload + 1) }, 50)
+        } else if (onload < 100) {
+            setTimeout(() => { setOnload(onload + 1) }, 30)
+        } else if (onload === 100) {
+            setLoadEnd(true)
+        }
+    }, [onload])
+
+
+    return (<div className="creation_loading">
+        <div className="loading_msg">{loadEnd ? "퀴즈 생성 완료 📋" : "퀴즈 생성중... 📋"}</div>
+        <div className="loading_bar">
+            <div className="bar_state" style={{ width: `${onload}%` }}></div>
+            <div className="bar_text">{onload}%</div>
         </div>
-        <div className="loading_msg">곧 퀴즈가 생성됩니다 📋</div>
+        { loadEnd &&
+            <Link to="/creation/completion">
+                <button className="nextBtn btn">다음 단계로 넘어가기</button>
+            </Link>
+        }
     </div>);
 }
 

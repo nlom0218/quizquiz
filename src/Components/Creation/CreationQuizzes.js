@@ -56,7 +56,7 @@ const CreationQuizzes = ({ num }) => {
             })}
             <input type="submit" value="완료" />
         </form>
-        {finish && < Redirect push to="/creation/completion" />}
+        {finish && < Redirect push to="/creation/loading" />}
     </div>);
 }
 

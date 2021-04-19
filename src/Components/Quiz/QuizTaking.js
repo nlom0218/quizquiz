@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import { HomeIcon, FullScr, SmallScr, QuizStorage } from '../../icon';
 import { LS_getQuizInfo } from '../../localStorage';
 import QuizContent from './QuizContent';
+import BgImg1 from "../../Images/BackgroundImg/BgImg1.jpg"
 
 const QuizTaking = () => {
-    const { timer: LS_quizSettingTimer } = JSON.parse(localStorage.getItem("quizSetting"))
+    let quizSetting = JSON.parse(localStorage.getItem("quizSetting"));
+    quizSetting = quizSetting ? quizSetting : { num: 0, BgName: BgImg1, timer: 0 }
+    const { timer: LS_quizSettingTimer, BgName } = quizSetting
 
     const [num, setNum] = useState(0)
     const [openAnswer, setOpenAnswer] = useState(false)
@@ -26,8 +29,6 @@ const QuizTaking = () => {
         }, 1000)
         return () => clearInterval(countDown)
     }, [timer])
-
-    const { BgName } = JSON.parse(localStorage.getItem("quizSetting"))
 
     const { quizTitle, numOfQuiz } = LS_getQuizInfo()
 

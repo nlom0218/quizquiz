@@ -15,12 +15,12 @@ const Footer = () => {
                     <div className="explan-me_email_list">E-MAIL :</div>
                     <div className="explan-me_email_content">nlom0218@gmail.com</div>
                 </div>
-                <div className="explan-me_blog explan-me_item">
+                {/* <div className="explan-me_blog explan-me_item">
                     <div className="explan-me_blog_list">BLOG :</div>
                     <div className="explan-me_blog_content">
                         <a href="https://blog.naver.com/nlom0218" target="blank">初不得三[초부득삼]_네이버블로그</a>
                     </div>
-                </div>
+                </div> */}
                 <div className="explan-me_instagram explan-me_item">
                     <div className="explan-me_instagram_list">INSTAGRAM :</div>
                     <div className="explan-me_instagram_content">

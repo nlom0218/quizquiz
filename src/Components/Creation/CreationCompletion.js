@@ -1,20 +1,45 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import CreationLoading from './CreationLoading';
-import CreationLoadingEnd from './CreationLoadingEnd';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
+import { ListIcon, Save, Start } from '../../icon';
 
 const CreationCompletion = () => {
-    // const [loading, setLoading] = useState(true)
+    const [start, setStart] = useState(false)
+    const onClickBtn = () => {
+        if (window.confirm("퀴즈가 끝나면 퀴즈는 삭제됩니다. 괜찮습니까?")) {
+            setStart(true)
+        } else {
+            return
+        }
 
-    // setTimeout(() => setLoading(false), 2000)
+    }
 
     return (<div className="creation_complete">
-        {/* {loading ?
-            <CreationLoading />
-            :
-            <CreationLoadingEnd />} */}
-        <CreationLoadingEnd />
+        <div className="quizBtn">
+            <div className="quizBtn_start">
+                <div className="start_icon">{Start}</div>
+                <ul className="start_msg">
+                    <li>{ListIcon} 퀴즈 종료 후 데이터 삭제</li>
+                    <li>{ListIcon} 퀴즈 저장소에 저장 되지 않음</li>
+                    <li>{ListIcon} 퀴즈 바로 시작</li>
+                </ul>
+                <button className="btn startBtn" name="startBtn" onClick={onClickBtn}>시작하기</button>
+            </div>
+            <div className="quizBtn_save">
+                <div className="save_icon">{Save}</div>
+                <ul className="save_msg">
+                    <li>{ListIcon} 퀴즈 저장소에 저장</li>
+                    <li>{ListIcon} 퀴즈 수정 및 삭제 가능</li>
+                    <li>{ListIcon} 퀴즈 저장소 선택화면으로 이동</li>
+                </ul>
+                <Link to="/creation/quizsave">
+                    <button className="btn saveBtn" name="saveBtn">저장하기</button>
+                </Link>
+            </div>
+        </div>
+        {start && < Redirect push to="/quiz" />}
     </div>);
 }
 
-export default connect()(CreationCompletion)
+export default connect()(CreationCompletion);

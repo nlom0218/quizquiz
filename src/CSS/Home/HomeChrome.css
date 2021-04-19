@@ -19,7 +19,7 @@
 }
 
 .home_chrome .chrome_column:last-child {
-    width: 80%;
+    width: 75%;
     font-size: 2.5vh;
     display: flex;
     flex-direction: column;
