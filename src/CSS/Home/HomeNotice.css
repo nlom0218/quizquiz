@@ -10,7 +10,7 @@
 }
 
 .home_notice .home_notice_column:first-child {
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -29,7 +29,7 @@
 }
 
 .home_notice .home_notice_writing {
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
