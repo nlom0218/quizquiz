@@ -8,7 +8,7 @@ const HomeNotice = () => {
     return (<div className="home_notice">
         <div className="home_notice_column">
             <div className="home_notice_icon">🪧</div>
-            <div className="home_notice_msg">공지사항</div>
+            <div className="home_notice_msg">최근 공지사항</div>
         </div>
         <div className="home_notice_writing">
             <div className="writing_icon">📗</div>
