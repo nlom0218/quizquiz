@@ -1,8 +1,8 @@
-import { faIgloo } from '@fortawesome/free-solid-svg-icons';
+
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
-import { DelQuiz, EditQuiz, Play, Start } from '../../icon';
-import { del_LS_quizData, LS_quizArr, LS_setQuiz, LS_setQuizInfo, seleted_LS_quizData, setLS_quizData, setLS_quizDate } from '../../localStorage';
+import { DelQuiz, EditQuiz, Play } from '../../icon';
+import { del_LS_quizData, LS_quizArr, LS_setQuiz, LS_setQuizInfo, seleted_LS_quizData, setLS_quizData } from '../../localStorage';
 
 const QuizStorageIntro = () => {
     setLS_quizData()

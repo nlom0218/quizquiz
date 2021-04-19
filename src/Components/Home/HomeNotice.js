@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { contents } from '../../contents';
 
 const HomeNotice = () => {
-    const content = contents.[contents.length - 1]
+    const content = contents[contents.length - 1]
 
     return (<div className="home_notice">
         <div className="home_notice_column">

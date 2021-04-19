@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Redirect, useParams } from 'react-router';
+import React from 'react';
+import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { contents } from '../../contents';
 import { LeftArrow, List, RightArrow } from '../../icon';
