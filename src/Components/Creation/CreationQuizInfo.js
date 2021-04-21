@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { LS_setQuizInfo } from '../../localStorage';
-import CreationQuizzes from './CreationQuizzes';
+import { LS_setQuizData } from '../../localStorage';
 
-const CreationQuizInfo = () => {
+const CreationQuizInfo = ({ completeQuizInfo }) => {
     const [quizTitle, setQuizTItle] = useState("")
     const [numOfQuiz, setNumOfQuiz] = useState(3)
     const [num, setNum] = useState(3)
-    const [quizAndAnswer, setQuizAndAnswer] = useState(false)
+
+    let quizData = {
+        info: {
+            quizTitle: "",
+            quizId: "",
+            numOfQuiz: "",
+            storage: ""
+        },
+        contents: []
+    }
 
     const onChangeValue = (e) => {
         let { target: { name, value } } = e
@@ -23,16 +30,18 @@ const CreationQuizInfo = () => {
         return quizId
     }
 
+    const onSubmitQuizInfo = (e) => {
+        e.preventDefault()
+        const quizId = createQuizId()
+        quizData = { ...quizData, info: { ...quizData.info, quizTitle, quizId, numOfQuiz } }
+        LS_setQuizData(quizData)
+        setNum(numOfQuiz)
+        completeQuizInfo()
+    }
+
     return (
         <div className="quizInfo">
-            <form className="quizInfo_form" onSubmit={(e) => {
-                e.preventDefault()
-                const quizId = createQuizId()
-                LS_setQuizInfo(quizTitle, quizId, numOfQuiz)
-                setNum(numOfQuiz)
-                setQuizAndAnswer(true)
-            }
-            }>
+            <form className="quizInfo_form" onSubmit={onSubmitQuizInfo}>
                 <input
                     className="quizInfo_title"
                     type="text"
@@ -62,9 +71,8 @@ const CreationQuizInfo = () => {
                     />
                 </div>
             </form>
-            {quizAndAnswer && <CreationQuizzes num={num} />}
         </div >
     );
 }
 
-export default connect()(CreationQuizInfo);
+export default CreationQuizInfo;

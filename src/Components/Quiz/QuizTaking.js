@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { HomeIcon, FullScr, SmallScr, QuizStorage } from '../../icon';
-import { LS_getQuizInfo } from '../../localStorage';
+import { LS_getQuizData, LS_getQuizInfo, LS_setQuizData } from '../../localStorage';
 import QuizContent from './QuizContent';
 import BgImg1 from "../../Images/BackgroundImg/BgImg1.jpg"
 
@@ -30,7 +30,7 @@ const QuizTaking = () => {
         return () => clearInterval(countDown)
     }, [timer])
 
-    const { quizTitle, numOfQuiz } = LS_getQuizInfo()
+    const { info: { quizTitle, numOfQuiz } } = LS_getQuizData()
 
     const onClickBeforeBtn = () => {
         setOpenAnswer(false)
@@ -105,6 +105,7 @@ const QuizTaking = () => {
                 onClickAnswerBtn={onClickAnswerBtn}
                 onClickBeforeBtn={onClickBeforeBtn}
                 onClickNextBtn={onClickNextBtn}
+                numOfQuiz={numOfQuiz}
             />
         </div>
     </div>);

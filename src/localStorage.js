@@ -1,3 +1,9 @@
+export const LS_setQuizData = (quizData) => {
+    localStorage.setItem("quizData", JSON.stringify(quizData))
+}
+export const LS_getQuizData = () => JSON.parse(localStorage.getItem("quizData"))
+
+//삭제할것들
 export const LS_setQuiz = (quizzesArr, answersArr) => {
     localStorage.setItem("quizzes", JSON.stringify(quizzesArr))
     localStorage.setItem("answers", JSON.stringify(answersArr))
@@ -5,168 +11,157 @@ export const LS_setQuiz = (quizzesArr, answersArr) => {
 export const LS_setQuizInfo = (quizTitle, quizId, numOfQuiz, storage) => {
     localStorage.setItem("quizInfo", JSON.stringify({ quizTitle, quizId, numOfQuiz, storage }))
 }
-
 export const LS_getQuizInfo = () => JSON.parse(localStorage.getItem("quizInfo"))
 export const LS_getQuizzesArr = () => JSON.parse(localStorage.getItem("quizzes"))
 export const LS_getAnswersArr = () => JSON.parse(localStorage.getItem("answers"))
+// 일단 여기까지
 
 
 // Save Quiz in QuizStorage with Local Storage
-export const LS_setQuizData1 = (quizData) => { localStorage.setItem("QuizData1", JSON.stringify(quizData)) }
-export const LS_setQuizData2 = (quizData) => { localStorage.setItem("QuizData2", JSON.stringify(quizData)) }
-export const LS_setQuizData3 = (quizData) => { localStorage.setItem("QuizData3", JSON.stringify(quizData)) }
-export const LS_setQuizData4 = (quizData) => { localStorage.setItem("QuizData4", JSON.stringify(quizData)) }
-export const LS_setQuizData5 = (quizData) => { localStorage.setItem("QuizData5", JSON.stringify(quizData)) }
-export const LS_setQuizData6 = (quizData) => { localStorage.setItem("QuizData6", JSON.stringify(quizData)) }
-export const LS_setQuizData7 = (quizData) => { localStorage.setItem("QuizData7", JSON.stringify(quizData)) }
-export const LS_setQuizData8 = (quizData) => { localStorage.setItem("QuizData8", JSON.stringify(quizData)) }
-export const LS_setQuizData9 = (quizData) => { localStorage.setItem("QuizData9", JSON.stringify(quizData)) }
-export const LS_setQuizData10 = (quizData) => { localStorage.setItem("QuizData10", JSON.stringify(quizData)) }
+export const LS_setQuizData1 = (quizData) => { localStorage.setItem("quizData1", JSON.stringify(quizData)) }
+export const LS_setQuizData2 = (quizData) => { localStorage.setItem("quizData2", JSON.stringify(quizData)) }
+export const LS_setQuizData3 = (quizData) => { localStorage.setItem("quizData3", JSON.stringify(quizData)) }
+export const LS_setQuizData4 = (quizData) => { localStorage.setItem("quizData4", JSON.stringify(quizData)) }
+export const LS_setQuizData5 = (quizData) => { localStorage.setItem("quizData5", JSON.stringify(quizData)) }
+export const LS_setQuizData6 = (quizData) => { localStorage.setItem("quizData6", JSON.stringify(quizData)) }
+export const LS_setQuizData7 = (quizData) => { localStorage.setItem("quizData7", JSON.stringify(quizData)) }
+export const LS_setQuizData8 = (quizData) => { localStorage.setItem("quizData8", JSON.stringify(quizData)) }
+export const LS_setQuizData9 = (quizData) => { localStorage.setItem("quizData9", JSON.stringify(quizData)) }
+export const LS_setQuizData10 = (quizData) => { localStorage.setItem("quizData10", JSON.stringify(quizData)) }
 
 export const LS_saveQuizData = (name) => {
-    const quizzes = LS_getQuizzesArr()
-    const answers = LS_getAnswersArr()
-    const info = LS_getQuizInfo()
+    const quizData = LS_getQuizData()
     if (name === "QS1Btn") {
-        const quizData = { info, quizzes, answers, storage: 1 }
-        LS_setQuizData1(quizData)
+        LS_setQuizData1({ ...quizData, info: { ...quizData.info, storage: 1 } })
     } else if (name === "QS2Btn") {
-        const quizData = { info, quizzes, answers, storage: 2 }
-        LS_setQuizData2(quizData)
+        LS_setQuizData2({ ...quizData, info: { ...quizData.info, storage: 2 } })
     } else if (name === "QS3Btn") {
-        const quizData = { info, quizzes, answers, storage: 3 }
-        LS_setQuizData3(quizData)
+        LS_setQuizData3({ ...quizData, info: { ...quizData.info, storage: 3 } })
     } else if (name === "QS4Btn") {
-        const quizData = { info, quizzes, answers, storage: 4 }
-        LS_setQuizData4(quizData)
+        LS_setQuizData4({ ...quizData, info: { ...quizData.info, storage: 4 } })
     } else if (name === "QS5Btn") {
-        const quizData = { info, quizzes, answers, storage: 5 }
-        LS_setQuizData5(quizData)
+        LS_setQuizData5({ ...quizData, info: { ...quizData.info, storage: 5 } })
     } else if (name === "QS6Btn") {
-        const quizData = { info, quizzes, answers, storage: 6 }
-        LS_setQuizData6(quizData)
+        LS_setQuizData6({ ...quizData, info: { ...quizData.info, storage: 6 } })
     } else if (name === "QS7Btn") {
-        const quizData = { info, quizzes, answers, storage: 7 }
-        LS_setQuizData7(quizData)
+        LS_setQuizData7({ ...quizData, info: { ...quizData.info, storage: 7 } })
     } else if (name === "QS8Btn") {
-        const quizData = { info, quizzes, answers, storage: 8 }
-        LS_setQuizData8(quizData)
+        LS_setQuizData8({ ...quizData, info: { ...quizData.info, storage: 8 } })
     } else if (name === "QS9Btn") {
-        const quizData = { info, quizzes, answers, storage: 9 }
-        LS_setQuizData9(quizData)
+        LS_setQuizData9({ ...quizData, info: { ...quizData.info, storage: 9 } })
     } else if (name === "QS10Btn") {
-        const quizData = { info, quizzes, answers, storage: 10 }
-        LS_setQuizData10(quizData)
-    } else {
+        LS_setQuizData10({ ...quizData, info: { ...quizData.info, storage: 10 } })
+    }
+    else {
         return
     }
 }
 
 // localstorage에서 저장소1~10의 데이터를 객체 형식으로 가져오기
 // 모든 퀴즈의 상태를 불러오기 위해 아래의 export과정은 꼭 필요하다
-let LS_getQuizData1 = null
-let LS_getQuizData2 = null
-let LS_getQuizData3 = null
-let LS_getQuizData4 = null
-let LS_getQuizData5 = null
-let LS_getQuizData6 = null
-let LS_getQuizData7 = null
-let LS_getQuizData8 = null
-let LS_getQuizData9 = null
-let LS_getQuizData10 = null
+let LS_quizData1 = null
+let LS_quizData2 = null
+let LS_quizData3 = null
+let LS_quizData4 = null
+let LS_quizData5 = null
+let LS_quizData6 = null
+let LS_quizData7 = null
+let LS_quizData8 = null
+let LS_quizData9 = null
+let LS_quizData10 = null
 export const setLS_quizData = () => {
-    LS_getQuizData1 = JSON.parse(localStorage.getItem("QuizData1")) ? JSON.parse(localStorage.getItem("QuizData1")) : null
-    LS_getQuizData2 = JSON.parse(localStorage.getItem("QuizData2")) ? JSON.parse(localStorage.getItem("QuizData2")) : null
-    LS_getQuizData3 = JSON.parse(localStorage.getItem("QuizData3")) ? JSON.parse(localStorage.getItem("QuizData3")) : null
-    LS_getQuizData4 = JSON.parse(localStorage.getItem("QuizData4")) ? JSON.parse(localStorage.getItem("QuizData4")) : null
-    LS_getQuizData5 = JSON.parse(localStorage.getItem("QuizData5")) ? JSON.parse(localStorage.getItem("QuizData5")) : null
-    LS_getQuizData6 = JSON.parse(localStorage.getItem("QuizData6")) ? JSON.parse(localStorage.getItem("QuizData6")) : null
-    LS_getQuizData7 = JSON.parse(localStorage.getItem("QuizData7")) ? JSON.parse(localStorage.getItem("QuizData7")) : null
-    LS_getQuizData8 = JSON.parse(localStorage.getItem("QuizData8")) ? JSON.parse(localStorage.getItem("QuizData8")) : null
-    LS_getQuizData9 = JSON.parse(localStorage.getItem("QuizData9")) ? JSON.parse(localStorage.getItem("QuizData9")) : null
-    LS_getQuizData10 = JSON.parse(localStorage.getItem("QuizData10")) ? JSON.parse(localStorage.getItem("QuizData10")) : null
+    LS_quizData1 = JSON.parse(localStorage.getItem("quizData1")) ? JSON.parse(localStorage.getItem("quizData1")) : null
+    LS_quizData2 = JSON.parse(localStorage.getItem("quizData2")) ? JSON.parse(localStorage.getItem("quizData2")) : null
+    LS_quizData3 = JSON.parse(localStorage.getItem("quizData3")) ? JSON.parse(localStorage.getItem("quizData3")) : null
+    LS_quizData4 = JSON.parse(localStorage.getItem("quizData4")) ? JSON.parse(localStorage.getItem("quizData4")) : null
+    LS_quizData5 = JSON.parse(localStorage.getItem("quizData5")) ? JSON.parse(localStorage.getItem("quizData5")) : null
+    LS_quizData6 = JSON.parse(localStorage.getItem("quizData6")) ? JSON.parse(localStorage.getItem("quizData6")) : null
+    LS_quizData7 = JSON.parse(localStorage.getItem("quizData7")) ? JSON.parse(localStorage.getItem("quizData7")) : null
+    LS_quizData8 = JSON.parse(localStorage.getItem("quizData8")) ? JSON.parse(localStorage.getItem("quizData8")) : null
+    LS_quizData9 = JSON.parse(localStorage.getItem("quizData9")) ? JSON.parse(localStorage.getItem("quizData9")) : null
+    LS_quizData10 = JSON.parse(localStorage.getItem("quizData10")) ? JSON.parse(localStorage.getItem("quizData10")) : null
 }
 export const LS_quizArr = () => {
     return (
         [
-            LS_getQuizData1 ? LS_getQuizData1 : null,
-            LS_getQuizData2 ? LS_getQuizData2 : null,
-            LS_getQuizData3 ? LS_getQuizData3 : null,
-            LS_getQuizData4 ? LS_getQuizData4 : null,
-            LS_getQuizData5 ? LS_getQuizData5 : null,
-            LS_getQuizData6 ? LS_getQuizData6 : null,
-            LS_getQuizData7 ? LS_getQuizData7 : null,
-            LS_getQuizData8 ? LS_getQuizData8 : null,
-            LS_getQuizData9 ? LS_getQuizData9 : null,
-            LS_getQuizData10 ? LS_getQuizData10 : null
+            LS_quizData1 ? LS_quizData1 : null,
+            LS_quizData2 ? LS_quizData2 : null,
+            LS_quizData3 ? LS_quizData3 : null,
+            LS_quizData4 ? LS_quizData4 : null,
+            LS_quizData5 ? LS_quizData5 : null,
+            LS_quizData6 ? LS_quizData6 : null,
+            LS_quizData7 ? LS_quizData7 : null,
+            LS_quizData8 ? LS_quizData8 : null,
+            LS_quizData9 ? LS_quizData9 : null,
+            LS_quizData10 ? LS_quizData10 : null
         ]
     )
 }
 
 // LS quizData 초기화
 export const LS_quizRemove = () => {
-    localStorage.removeItem("QuizData1")
-    localStorage.removeItem("QuizData2")
-    localStorage.removeItem("QuizData3")
-    localStorage.removeItem("QuizData4")
-    localStorage.removeItem("QuizData5")
-    localStorage.removeItem("QuizData6")
-    localStorage.removeItem("QuizData7")
-    localStorage.removeItem("QuizData8")
-    localStorage.removeItem("QuizData9")
-    localStorage.removeItem("QuizData10")
+    localStorage.removeItem("quizData1")
+    localStorage.removeItem("quizData2")
+    localStorage.removeItem("quizData3")
+    localStorage.removeItem("quizData4")
+    localStorage.removeItem("quizData5")
+    localStorage.removeItem("quizData6")
+    localStorage.removeItem("quizData7")
+    localStorage.removeItem("quizData8")
+    localStorage.removeItem("quizData9")
+    localStorage.removeItem("quizData10")
 }
 
 // quizdata del in quizStorage 
 export const del_LS_quizData = (num) => {
     if (num === 1) {
-        localStorage.removeItem("QuizData1")
+        localStorage.removeItem("quizData1")
     } else if (num === 2) {
-        localStorage.removeItem("QuizData2")
+        localStorage.removeItem("quizData2")
     } else if (num === 3) {
-        localStorage.removeItem("QuizData3")
+        localStorage.removeItem("quizData3")
     } else if (num === 4) {
-        localStorage.removeItem("QuizData4")
+        localStorage.removeItem("quizData4")
     } else if (num === 5) {
-        localStorage.removeItem("QuizData5")
+        localStorage.removeItem("quizData5")
     } else if (num === 6) {
-        localStorage.removeItem("QuizData6")
+        localStorage.removeItem("quizData6")
     } else if (num === 7) {
-        localStorage.removeItem("QuizData7")
+        localStorage.removeItem("quizData7")
     } else if (num === 8) {
-        localStorage.removeItem("QuizData8")
+        localStorage.removeItem("quizData8")
     } else if (num === 9) {
-        localStorage.removeItem("QuizData9")
+        localStorage.removeItem("quizData9")
     } else if (num === 10) {
-        localStorage.removeItem("QuizData10")
+        localStorage.removeItem("quizData10")
     }
 }
 
 // seleted one QuizDate
 export const seleted_LS_quizData = (num) => {
-    let QuizData = null
+    let quizData = null
     if (num === 1) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData1"))
+        quizData = JSON.parse(localStorage.getItem("quizData1"))
     } else if (num === 2) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData2"))
+        quizData = JSON.parse(localStorage.getItem("quizData2"))
     } else if (num === 3) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData3"))
+        quizData = JSON.parse(localStorage.getItem("quizData3"))
     } else if (num === 4) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData4"))
+        quizData = JSON.parse(localStorage.getItem("quizData4"))
     } else if (num === 5) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData5"))
+        quizData = JSON.parse(localStorage.getItem("quizData5"))
     } else if (num === 6) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData6"))
+        quizData = JSON.parse(localStorage.getItem("quizData6"))
     } else if (num === 7) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData7"))
+        quizData = JSON.parse(localStorage.getItem("quizData7"))
     } else if (num === 8) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData8"))
+        quizData = JSON.parse(localStorage.getItem("quizData8"))
     } else if (num === 9) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData9"))
+        quizData = JSON.parse(localStorage.getItem("quizData9"))
     } else if (num === 10) {
-        QuizData = JSON.parse(localStorage.getItem("QuizData10"))
+        quizData = JSON.parse(localStorage.getItem("quizData10"))
     }
-    return QuizData
+    return quizData
 }
 
 function init() {
