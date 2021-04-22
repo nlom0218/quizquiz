@@ -127,8 +127,126 @@
 }
 
 .quiz_edit .add_btn {
-    font-size: 4.5vh;
-    cursor: pointer;
+    font-size: 2.5vh;
     color: #343A40;
     margin-bottom: 5vh;
+}
+
+/* 객관식 모드 */
+
+.edit_quizAndAnserList .objMode {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.objMode .objMode_column:first-child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.objMode_column:first-child .edit_quiz_value {
+    width: 85%;
+}
+
+.objMode_column:first-child input {
+    width: 97%;
+}
+
+.objMode .objMode_column:last-child {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.objMode_column:last-child .objQuiz_select {
+    width: 80%;
+}
+
+.objQuiz_select .select_item {
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.select_item .select_num {
+    font-size: 2.5vh;
+    border: 2px solid #2e3235;
+    width: 2vh;
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.select_item input {
+    width: 100%;
+}
+
+.objMode_column:last-child .objMode_answer {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.objMode_answer .objMode_answer_msg {
+    font-size: 2vh;
+    color: #E8314E;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.objMode_answer input {
+    width: 3vh;
+    display: flex;
+    align-items: flex-end;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.objMode_answer input::-webkit-inner-spin-button,
+.objMode_answer input::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+.quiz_edit .add_btn {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.add_btn .add_btn_column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: rgb(89, 152, 25);
+    font-weight: 400;
+}
+
+.add_btn_column .add_btn_icon {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 3vh;
+}
+
+.add_btn_column .add_btn_icon:hover {
+    color: rgb(110, 193, 27);
+}
+.add_btn_column .add_btn_icon:active {
+    top: -1px;
 }

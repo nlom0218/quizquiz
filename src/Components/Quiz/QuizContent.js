@@ -1,31 +1,51 @@
 import React from 'react';
 import { LeftIcon, RightIcon } from '../../icon';
-import { LS_getAnswersArr, LS_getQuizzesArr } from '../../localStorage';
+import { LS_getQuizData } from '../../localStorage';
 
-const QuizContent = ({ num, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
-    const quizzes = LS_getQuizzesArr()
-    const answers = LS_getAnswersArr()
-
-    const onKeyDown = (e) => {
-        console.log(e.keyCode);
+const QuizContent = ({ num, numOfQuiz, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
+    const { contents } = LS_getQuizData()
+    let quizzes = []
+    let answers = []
+    for (let i = 0; i < numOfQuiz; i++) {
+        quizzes.push(contents[i].quiz)
+        answers.push(contents[i].answer)
     }
+    const selectArr = contents[num].select ? contents[num].select : null
 
     return (<div className="quizContainer">
-        <div className="quiz_content">
-            <div className="content_quiz">{quizzes[num]}</div>
-            <div className="content_answer">
-                <button className="answer_btn btn" onClick={onClickAnswerBtn}>정답</button>
-                {openAnswer &&
-                    <div className="answer_right">{answers[num]}</div>
-                }
-            </div>
-        </div>
+        {contents[num].type === "sub" &&
+            <div className="quiz_content">
+                <div className="content_quiz">{quizzes[num]}</div>
+                <div className="content_answer">
+                    <button className="answer_btn btn" onClick={onClickAnswerBtn}>정답</button>
+                    {openAnswer &&
+                        <div className="answer_right">{answers[num]}</div>
+                    }
+                </div>
+            </div>}
+        {contents[num].type === "obj" &&
+            <div className="quiz_content">
+                <div className="content_quiz">{quizzes[num]}</div>
+                <div className="content_select">
+                    {selectArr.map((item, index) => {
+                        return (<div className="select_items" key={index}>
+                            <div className="select_num">{index + 1}</div>
+                            <div className="select_item">{item}</div>
+                        </div>)
+                    })}
+                </div>
+                <div className="content_answer">
+                    <button className="answer_btn btn" onClick={onClickAnswerBtn}>정답</button>
+                    {openAnswer &&
+                        <div className="answer_right">{answers[num]}</div>
+                    }
+                </div>
+            </div>}
         <div className="quizMoveBtn">
             <button
                 name="beforeBtn"
                 className="btn beforeBtn"
                 onClick={onClickBeforeBtn}
-                onKeyPress={onKeyDown}
             >{LeftIcon}</button>
             <button
                 name="nextBtn"

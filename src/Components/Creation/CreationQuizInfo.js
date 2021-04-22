@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { LS_setQuizInfo } from '../../localStorage';
-import CreationQuizzes from './CreationQuizzes';
+import { EditQuiz, WarningIcon } from '../../icon';
+import { LS_setQuizData } from '../../localStorage';
 
-const CreationQuizInfo = () => {
+const CreationQuizInfo = ({ completeQuizInfo }) => {
     const [quizTitle, setQuizTItle] = useState("")
     const [numOfQuiz, setNumOfQuiz] = useState(3)
     const [num, setNum] = useState(3)
-    const [quizAndAnswer, setQuizAndAnswer] = useState(false)
+
+    let quizData = {
+        info: {
+            quizTitle: "",
+            quizId: "",
+            numOfQuiz: "",
+            storage: ""
+        },
+        contents: []
+    }
 
     const onChangeValue = (e) => {
         let { target: { name, value } } = e
@@ -23,16 +31,23 @@ const CreationQuizInfo = () => {
         return quizId
     }
 
+    const onSubmitQuizInfo = (e) => {
+        e.preventDefault()
+        const quizId = createQuizId()
+        quizData = { ...quizData, info: { ...quizData.info, quizTitle, quizId, numOfQuiz } }
+        LS_setQuizData(quizData)
+        setNum(numOfQuiz)
+        completeQuizInfo()
+    }
+
     return (
         <div className="quizInfo">
-            <form className="quizInfo_form" onSubmit={(e) => {
-                e.preventDefault()
-                const quizId = createQuizId()
-                LS_setQuizInfo(quizTitle, quizId, numOfQuiz)
-                setNum(numOfQuiz)
-                setQuizAndAnswer(true)
-            }
-            }>
+            <div className="creationQuiz_msg">퀴즈의 제목과 퀴즈의 수를 입력하세요</div>
+            <div className="creationQuiz_warning">
+                <div className="warning_icon">{WarningIcon}</div>
+                <div className="warning_msg">새로고침 & 페이지 이동을 하면 퀴즈 데이터는 사라집니다</div>
+            </div>
+            <form className="quizInfo_form" onSubmit={onSubmitQuizInfo}>
                 <input
                     className="quizInfo_title"
                     type="text"
@@ -62,9 +77,9 @@ const CreationQuizInfo = () => {
                     />
                 </div>
             </form>
-            {quizAndAnswer && <CreationQuizzes num={num} />}
+            <div className="creationQuiz_editMsg">퀴즈 추가, 삭제, 수정은 퀴즈 저장소에서 가능합니다</div>
         </div >
     );
 }
 
-export default connect()(CreationQuizInfo);
+export default CreationQuizInfo;

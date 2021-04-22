@@ -1,6 +1,5 @@
 .quizStorage_intro {
     width: 60%;
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +10,6 @@
 .quizStorage_intro .intro_msg {
     margin-bottom: 6vh;
     width: 100%;
-    /* height: 10%; */
     font-size: 4vh;
     font-weight: 700;
     display: flex;
@@ -20,7 +18,6 @@
 
 .quizStorage_intro .quizList {
     width: 100%;
-    /* height: 90%; */
     display: flex;
     flex-direction: column;
 }

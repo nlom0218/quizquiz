@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { DelQuiz, EditQuiz, Play } from '../../icon';
-import { del_LS_quizData, LS_quizArr, LS_setQuiz, LS_setQuizInfo, seleted_LS_quizData, setLS_quizData } from '../../localStorage';
+import { del_LS_quizData, LS_quizArr, LS_setQuiz, LS_setQuizData, LS_setQuizInfo, seleted_LS_quizData, setLS_quizData } from '../../localStorage';
 
 const QuizStorageIntro = () => {
     setLS_quizData()
@@ -31,9 +31,8 @@ const QuizStorageIntro = () => {
     const onClickPlay = (e) => {
         const num = getDivNum(e)
         if (num) {
-            const QuizData = seleted_LS_quizData(num)
-            LS_setQuiz(QuizData.quizzes, QuizData.answers)
-            LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
+            const quizData = seleted_LS_quizData(num)
+            LS_setQuizData(quizData)
             setQuiz(true)
         } else {
             return
@@ -43,9 +42,8 @@ const QuizStorageIntro = () => {
     const onClickEdit = (e) => {
         const num = getDivNum(e)
         if (num) {
-            const QuizData = seleted_LS_quizData(num)
-            LS_setQuiz(QuizData.quizzes, QuizData.answers)
-            LS_setQuizInfo(QuizData.info.quizTitle, QuizData.info.quizId, QuizData.info.numOfQuiz, QuizData.storage)
+            const quizData = seleted_LS_quizData(num)
+            LS_setQuizData(quizData)
             setEdit(true)
         } else {
             return

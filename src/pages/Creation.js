@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import CreationQuizInfo from '../Components/Creation/CreationQuizInfo';
+import CreationQuiz from '../Components/Creation/CreationQuiz';
 import CreationCompletion from '../Components/Creation/CreationCompletion';
 
 import CreationQuizSave from '../Components/Creation/CreationQuizSave';
@@ -14,7 +14,7 @@ const Creation = () => {
         <Header />
         <div className="creation_page main">
             <Switch>
-                <Route exact path="/creation" > <CreationQuizInfo /></Route >
+                <Route exact path="/creation" > <CreationQuiz /></Route >
                 <Route path="/creation/loading"><CreationLoading /></Route>
                 <Route path="/creation/completion"><CreationCompletion /></Route>
                 <Route path="/creation/quizsave"><CreationQuizSave /></Route>
