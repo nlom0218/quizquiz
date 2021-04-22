@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EditQuiz, WarningIcon } from '../../icon';
 import { LS_setQuizData } from '../../localStorage';
+import KakaoAdFit from '../KakaoAdFit';
 
 const CreationQuizInfo = ({ completeQuizInfo }) => {
     const [quizTitle, setQuizTItle] = useState("")
@@ -78,6 +79,7 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
                 </div>
             </form>
             <div className="creationQuiz_editMsg">퀴즈 추가, 삭제, 수정은 퀴즈 저장소에서 가능합니다</div>
+            <KakaoAdFit />
         </div >
     );
 }

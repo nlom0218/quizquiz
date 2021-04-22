@@ -4,6 +4,7 @@ import { LS_getQuizData } from '../../localStorage';
 
 const QuizContent = ({ num, numOfQuiz, openAnswer, onClickAnswerBtn, onClickNextBtn, onClickBeforeBtn }) => {
     const { contents } = LS_getQuizData()
+
     let quizzes = []
     let answers = []
     for (let i = 0; i < numOfQuiz; i++) {

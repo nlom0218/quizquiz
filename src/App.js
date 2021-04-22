@@ -22,11 +22,11 @@ function App() {
         <Route path="/quiz"><Quiz /></Route>
       </Switch>
     </div>
-    {/* <div className="smallScreen">
+    <div className="smallScreen">
       <div className="smallScreen_column">큰 화면으로 키워주세요😅</div>
       <div className="smallScreen_column">모바일에서는 현재 QUIZ HI이용이 불가능합니다😭</div>
       <div className="smallScreen_column">앞으로의 업데이트에서 개선하도록 하겠습니다🤓</div>
-    </div> */}
+    </div>
   </>);
 }
 
