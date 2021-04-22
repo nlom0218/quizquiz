@@ -40,6 +40,7 @@ const QuizTaking = () => {
         }
         setNum(num - 1)
         setTimer(LS_quizSettingTimer)
+        document.querySelector(".quizContainer").scrollTo(0, 0)
     }
 
     const onClickNextBtn = () => {
@@ -50,6 +51,7 @@ const QuizTaking = () => {
         }
         setNum(num + 1)
         setTimer(LS_quizSettingTimer)
+        document.querySelector(".quizContainer").scrollTo(0, 0)
     }
 
     const onClickAnswerBtn = () => {
