@@ -3,6 +3,7 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import HomeChrome from '../Components/Home/HomeChrome';
 import HomeNotice from '../Components/Home/HomeNotice';
+import KakaoAdFit from '../Components/KakaoAdFit';
 
 const Home = () => {
     return (<>

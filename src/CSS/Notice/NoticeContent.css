@@ -1,4 +1,5 @@
 .notice_page .notice_content {
+    margin-bottom: 8vh;
     width: 60%;
     display: flex;
     flex-direction: column;

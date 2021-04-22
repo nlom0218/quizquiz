@@ -41,7 +41,7 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
         completeQuizInfo()
     }
 
-    return (
+    return (<>
         <div className="quizInfo">
             <div className="creationQuiz_msg">퀴즈의 제목과 퀴즈의 수를 입력하세요</div>
             <div className="creationQuiz_warning">
@@ -79,9 +79,9 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
                 </div>
             </form>
             <div className="creationQuiz_editMsg">퀴즈 추가, 삭제, 수정은 퀴즈 저장소에서 가능합니다</div>
-            <KakaoAdFit />
         </div >
-    );
+        <KakaoAdFit />
+    </>);
 }
 
 export default CreationQuizInfo;

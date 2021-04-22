@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import KakaoAdFit from '../KakaoAdFit';
 
 const CreationLoading = () => {
     const [onload, setOnload] = useState(0)
@@ -19,18 +20,21 @@ const CreationLoading = () => {
     }, [onload])
 
 
-    return (<div className="creation_loading">
-        <div className="loading_msg">{loadEnd ? "퀴즈 생성 완료 📋" : "퀴즈 생성중... 📋"}</div>
-        <div className="loading_bar">
-            <div className="bar_state" style={{ width: `${onload}%` }}></div>
-            <div className="bar_text">{onload}%</div>
+    return (<>
+        <div className="creation_loading">
+            <div className="loading_msg">{loadEnd ? "퀴즈 생성 완료 📋" : "퀴즈 생성중... 📋"}</div>
+            <div className="loading_bar">
+                <div className="bar_state" style={{ width: `${onload}%` }}></div>
+                <div className="bar_text">{onload}%</div>
+            </div>
+            {loadEnd &&
+                <Link to="/creation/completion">
+                    <button className="nextBtn btn">다음 단계로 넘어가기</button>
+                </Link>
+            }
         </div>
-        { loadEnd &&
-            <Link to="/creation/completion">
-                <button className="nextBtn btn">다음 단계로 넘어가기</button>
-            </Link>
-        }
-    </div>);
+        <KakaoAdFit />
+    </>);
 }
 
 export default connect()(CreationLoading);
