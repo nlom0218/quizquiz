@@ -104,12 +104,6 @@ const QuizEdit = () => {
             LS_saveQuizData(name)
             setQuizAnswerArr(newContents)
         }
-        // const quizzes = new_quizAnswerArr.map((item) => item.quiz)
-        // const answers = new_quizAnswerArr.map((item) => item.answer)
-        // LS_setQuizInfo(title, quizId, numOfQuiz + 1, storage)
-        // LS_setQuiz(quizzes, answers)
-        // LS_saveQuizData(name)
-        // setQuizAnswerArr(new_quizAnswerArr)
     }
 
     return (<>
@@ -175,27 +169,36 @@ const QuizEdit = () => {
                                 </div>
                             }
                             {item.type === "obj" &&
-                                <div className="edit_quizAndAnswer">
-                                    <div className="edit_quizAndAnser_des">
-                                        <div>{index + 1}번</div>
+                                <div className="edit_quizAndAnswer objMode">
+                                    <div className="objMode_column">
+                                        <div className="edit_quizAndAnser_des">
+                                            <div>{index + 1}번</div>
+                                        </div>
+                                        <div className="edit_quiz_value">
+                                            <input
+                                                className="edit"
+                                                type="text"
+                                                value={item.quiz}
+                                                placeholder="퀴즈를 입력하세요"
+                                                id={index}
+                                                name={`QS${storage}Btn`}
+                                                onChange={onChangeData("quiz")}
+                                                maxLength="120"
+                                                autoComplete='off'
+                                            />
+                                        </div>
+                                        <div className="edit_del">
+                                            <div
+                                                className="del_btn"
+                                                id={index + 1}
+                                                data-name={`QS${storage}Btn`}
+                                                onClick={onClickDelBtn}>{DelQuiz}</div>
+                                        </div>
                                     </div>
-                                    <div className="edit_quiz_value">
-                                        <input
-                                            className="edit"
-                                            type="text"
-                                            value={item.quiz}
-                                            placeholder="퀴즈를 입력하세요"
-                                            id={index}
-                                            name={`QS${storage}Btn`}
-                                            onChange={onChangeData("quiz")}
-                                            maxLength="120"
-                                            autoComplete='off'
-                                        />
-                                    </div>
-                                    <div className="edit_answer_value">
+                                    <div className="objMode_column">
                                         <div className="objQuiz_select">
                                             <div className="select_item">
-                                                <div>1</div>
+                                                <div className="select_num"><span>1</span></div>
                                                 <input
                                                     type="numder"
                                                     required
@@ -210,7 +213,7 @@ const QuizEdit = () => {
                                                 />
                                             </div>
                                             <div className="select_item">
-                                                <div>2</div>
+                                                <div className="select_num">2</div>
                                                 <input
                                                     type="numder"
                                                     required
@@ -225,7 +228,7 @@ const QuizEdit = () => {
                                                 />
                                             </div>
                                             <div className="select_item">
-                                                <div>3</div>
+                                                <div className="select_num">3</div>
                                                 <input
                                                     type="numder"
                                                     required
@@ -240,7 +243,7 @@ const QuizEdit = () => {
                                                 />
                                             </div>
                                             <div className="select_item">
-                                                <div>4</div>
+                                                <div className="select_num">4</div>
                                                 <input
                                                     type="numder"
                                                     required
@@ -255,38 +258,37 @@ const QuizEdit = () => {
                                                 />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="edit_answer_value">
-                                        <input
-                                            type="number"
-                                            value={item.answer}
-                                            placeholder="정답을 입력하세요"
-                                            id={index}
-                                            name={`QS${storage}Btn`}
-                                            onChange={onChangeData("answer")}
-                                            autoComplete='off'
-                                            min={1} max={4}
-                                        />
-                                    </div>
-                                    <div className="edit_del">
-                                        <div
-                                            className="del_btn"
-                                            id={index + 1}
-                                            data-name={`QS${storage}Btn`}
-                                            onClick={onClickDelBtn}>{DelQuiz}</div>
+                                        <div className="objMode_answer">
+                                            <div className="objMode_answer_msg">정답을 입력하세요(1~4)</div>
+                                            <input
+                                                type="number"
+                                                value={item.answer}
+                                                id={index}
+                                                name={`QS${storage}Btn`}
+                                                onChange={onChangeData("answer")}
+                                                autoComplete='off'
+                                                min={1} max={4}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             }
                         </div>)
                     })}
                 </div>
-                {numOfQuiz === 20 ? null : <div className="add_btn_name">주관식문제</div>}
-                <div className="add_btn" data-name={`QS${storage}Btn`} data-type="sub" onClick={onClickAddBtn}>
-                    {numOfQuiz === 20 ? null : AddQuiz}
-                </div>
-                {numOfQuiz === 20 ? null : <div className="add_btn_name">객관식문제</div>}
-                <div className="add_btn" data-name={`QS${storage}Btn`} data-type="obj" onClick={onClickAddBtn}>
-                    {numOfQuiz === 20 ? null : AddQuiz}
+                <div className="add_btn">
+                    <div className="add_btn_column">
+                        {numOfQuiz === 20 ? null : <div className="add_btn_name">주관식문제</div>}
+                        <div className="add_btn_icon" data-name={`QS${storage}Btn`} data-type="sub" onClick={onClickAddBtn}>
+                            {numOfQuiz === 20 ? null : AddQuiz}
+                        </div>
+                    </div>
+                    <div className="add_btn_column">
+                        {numOfQuiz === 20 ? null : <div className="add_btn_name">객관식문제</div>}
+                        <div className="add_btn_icon" data-name={`QS${storage}Btn`} data-type="obj" onClick={onClickAddBtn}>
+                            {numOfQuiz === 20 ? null : AddQuiz}
+                        </div>
+                    </div>
                 </div>
                 <button className="btn" onClick={onClickBack}>돌아가기</button>
             </div>

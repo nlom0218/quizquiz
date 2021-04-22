@@ -31,7 +31,7 @@ body, html, #root, .App {
 }
 
 
-.smallScreen {
+/* .smallScreen {
     display: none;
   }
   
@@ -57,7 +57,7 @@ body, html, #root, .App {
     .App {
         display: none;
     }
-  }
+  } */
 
 
 a {
@@ -72,10 +72,11 @@ a {
 
 /* Creation */
 @import "./Creation/Creation.css";
-@import "./Creation/CreationQuiz.css";
+@import "./Creation/CreationInfo.css";
 @import "./Creation/CreationCompletion.css";
 @import "./Creation/CreationLoading.css";
 @import "./Creation/CreationQuizSave.css";
+@import "./Creation/CreationContents.css";
 
 /* Quiz */
 @import "./Quiz/QuizIntro.css";

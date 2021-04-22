@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
+import { WarningIcon } from '../../icon';
 import { LS_getQuizData, LS_setQuizData } from '../../localStorage';
 
 const CreationContents = () => {
@@ -19,8 +20,15 @@ const CreationContents = () => {
     let { info: { numOfQuiz } } = LS_getQuizData()
 
     const onClickType = (e) => {
-        const { target: { dataset: { type } } } = e
+        const { target: { dataset: { type }, id } } = e
         setType(type)
+        if (type === "sub") {
+            document.getElementById("subType").classList.add("seleted_type")
+            document.getElementById("objType").classList.remove("seleted_type")
+        } else if (type === "obj") {
+            document.getElementById("objType").classList.add("seleted_type")
+            document.getElementById("subType").classList.remove("seleted_type")
+        }
     }
 
     const onChangeValue = (e) => {
@@ -69,38 +77,55 @@ const CreationContents = () => {
         } else {
             setFinish(true)
         }
+        document.getElementById("subType").classList.remove("seleted_type")
+        document.getElementById("objType").classList.remove("seleted_type")
     }
 
-    return (<>
+    return (<div className="quizContents">
+        <div className="creationQuiz_msg">퀴즈의 유형을 선택 후 퀴즈를 입력하세요({num}/{numOfQuiz})</div>
+        <div className="creationQuiz_warning">
+            <div className="warning_icon">{WarningIcon}</div>
+            <div className="warning_msg">새로고침 & 페이지 이동을 하면 퀴즈 데이터는 사라집니다</div>
+        </div>
         <div className="check_type">
-            <div className="type_name" data-type="sub" onClick={onClickType} >주관식</div>
-            <div className="type_name" data-type="obj" onClick={onClickType} >객관식</div>
+            <div id="subType" className="type_name" data-type="sub" onClick={onClickType} >주관식</div>
+            <div id="objType" className="type_name" data-type="obj" onClick={onClickType} >객관식</div>
         </div>
         { type === "sub" &&
             <form className="sub_quiz" onSubmit={onSubmitQuiz}>
-                <input
-                    type="text"
-                    placeholder={`${num}번 퀴즈를 적어주세요`}
-                    value={subQuiz}
-                    name="subQuiz"
-                    onChange={onChangeValue}
-                    autoComplete='off'
-                    required
-                    maxLength="120"
-                />
-                <input
-                    type="text"
-                    value={subAnswer}
-                    name="subAnswer"
-                    onChange={onChangeValue}
-                    placeholder={`${num}번 정답을 적어주세요`}
-                    required
-                    maxLength="36"
-                    autoComplete='off'
-                />
-                <input type="submit" value={num === numOfQuiz ? "퀴즈 생성하기" : `${num + 1}번 문제 만들기`} />
+                <div className="sub_quiz_column">
+                    <input
+                        type="text"
+                        placeholder={`${num}번 퀴즈를 적어주세요`}
+                        value={subQuiz}
+                        name="subQuiz"
+                        onChange={onChangeValue}
+                        autoComplete='off'
+                        required
+                        maxLength="120"
+                    />
+                </div>
+                <div className="sub_quiz_column">
+                    <input
+                        className="sub_quizAnswer"
+                        type="text"
+                        value={subAnswer}
+                        name="subAnswer"
+                        onChange={onChangeValue}
+                        placeholder={`${num}번 정답을 적어주세요`}
+                        required
+                        maxLength="36"
+                        autoComplete='off'
+                    />
+                </div>
+                <div className="quizContents_btn">
+                    <input
+                        type="submit"
+                        value={num === numOfQuiz ? "퀴즈 생성하기" : `${num}번 문제 만들기`} />
+                </div>
             </form>}
-        { type === "obj" &&
+        {
+            type === "obj" &&
             <form className="obj_quiz" onSubmit={onSubmitQuiz}>
                 <input
                     type="text"
@@ -114,7 +139,7 @@ const CreationContents = () => {
                     autoComplete='off'
                 />
                 <div className="objective_quiz_answers">
-                    <div className="answers_1">
+                    <div className="answers_1 answers_item">
                         <div className="answers_num">1</div>
                         <input
                             type="text"
@@ -127,7 +152,7 @@ const CreationContents = () => {
                             maxLength="36"
                         />
                     </div>
-                    <div className="answers_2">
+                    <div className="answers_2 answers_item">
                         <div className="answers_num">2</div>
                         <input
                             type="text"
@@ -140,7 +165,7 @@ const CreationContents = () => {
                             maxLength="36"
                         />
                     </div>
-                    <div className="answers_3">
+                    <div className="answers_3 answers_item">
                         <div className="answers_num">3</div>
                         <input
                             type="text"
@@ -153,7 +178,7 @@ const CreationContents = () => {
                             maxLength="36"
                         />
                     </div>
-                    <div className="answers_4">
+                    <div className="answers_4 answers_item">
                         <div className="answers_num">4</div>
                         <input
                             type="text"
@@ -172,10 +197,15 @@ const CreationContents = () => {
                     <input type="number" min={1} max={4} className="quiz_answers_num" required value={objAnswer}
                         onChange={onChangeValue} name="objAnswer" />
                 </div>
-                <input type="submit" value={num === numOfQuiz ? "퀴즈 생성하기" : `${num + 1}번 문제 만들기`} />
-            </form>}
+                <div className="quizContents_btn">
+                    <input
+                        type="submit"
+                        value={num === numOfQuiz ? "퀴즈 생성하기" : `${num}번 문제 만들기`} />
+                </div>
+            </form>
+        }
         { finish && < Redirect push to="/creation/loading" />}
-    </>);
+    </div >);
 }
 
 export default CreationContents;

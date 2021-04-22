@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { EditQuiz, WarningIcon } from '../../icon';
 import { LS_setQuizData } from '../../localStorage';
 
 const CreationQuizInfo = ({ completeQuizInfo }) => {
@@ -41,6 +42,11 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
 
     return (
         <div className="quizInfo">
+            <div className="creationQuiz_msg">퀴즈의 제목과 퀴즈의 수를 입력하세요</div>
+            <div className="creationQuiz_warning">
+                <div className="warning_icon">{WarningIcon}</div>
+                <div className="warning_msg">새로고침 & 페이지 이동을 하면 퀴즈 데이터는 사라집니다</div>
+            </div>
             <form className="quizInfo_form" onSubmit={onSubmitQuizInfo}>
                 <input
                     className="quizInfo_title"
@@ -71,6 +77,7 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
                     />
                 </div>
             </form>
+            <div className="creationQuiz_editMsg">퀴즈 추가, 삭제, 수정은 퀴즈 저장소에서 가능합니다</div>
         </div >
     );
 }
