@@ -2,7 +2,7 @@ import React from 'react';
 
 const KakaoAdFit = () => {
     return (<>
-        <ins class="kakao_ad_area" style={{ display: "none" }}
+        <ins class="kakao_ad_area"
             data-ad-unit="DAN-kX1m3DX6RSYtSEV6"
             data-ad-width="728"
             data-ad-height="90"></ins>
