@@ -14,7 +14,7 @@ body, html, #root, .App {
 
 .main {
     width: 100%;
-    margin: 50px 0px;
+    margin-top: 6vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,3 +102,8 @@ a {
 @import "./Notice/NoticeList.css";
 @import "./Notice/NoticeIntro.css";
 @import "./Notice/NoticeContent.css";
+
+/* 카카오 에드핏 */
+.adfit {
+    margin: 4vh 0vh;
+}
