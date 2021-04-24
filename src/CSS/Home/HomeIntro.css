@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 8vmin;
+    margin-bottom: 4vmin;
     
 }
 
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6vmin;
+    margin-bottom: 4vmin;
 }
 
 .home_page_warning .warning_icon {
