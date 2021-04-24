@@ -4,7 +4,7 @@ import { AddQuiz, DelQuiz, WarningIcon } from '../../icon';
 import { LS_getAnswersArr, LS_getQuizData, LS_getQuizInfo, LS_getQuizzesArr, LS_saveQuizData, LS_setQuiz, LS_setQuizData, LS_setQuizInfo } from '../../localStorage';
 import Footer from '../Footer';
 import Header from '../Header';
-import KakaoAdFit from '../KakaoAdFit';
+import KakaoAdFit, { AdFitInEditQuiz } from '../KakaoAdFit';
 
 const QuizEdit = () => {
     const { contents, info: { quizTitle, quizId, numOfQuiz, storage } } = LS_getQuizData()
@@ -295,7 +295,7 @@ const QuizEdit = () => {
                 <button className="btn" onClick={onClickBack}>돌아가기</button>
             </div>
         </div>
-        {/* <KakaoAdFit /> */}
+        <AdFitInEditQuiz />
         <Footer />
         { completion && <Redirect push to="/storage" />}
     </>);

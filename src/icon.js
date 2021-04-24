@@ -12,6 +12,7 @@ import {
     faEnvelopeOpenText,
     faExclamationCircle,
     faExpand,
+    faGrinStars,
     faHome,
     faList,
     faMarker,
@@ -53,3 +54,4 @@ export const Note = <FontAwesomeIcon icon={faStickyNote} />
 export const List = <FontAwesomeIcon icon={faList} />
 export const LeftArrow = <FontAwesomeIcon icon={faArrowLeft} />
 export const RightArrow = <FontAwesomeIcon icon={faArrowRight} />
+export const StarFace = <FontAwesomeIcon icon={faGrinStars} />

@@ -31,8 +31,14 @@
 .home_notice .home_notice_writing {
     width: 80%;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.home_notice_writing .notice_writing_column {
+    display: flex;
+    margin-bottom: 2vmin;
 }
 
 .home_notice .writing_icon {

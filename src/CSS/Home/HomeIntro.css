@@ -27,6 +27,32 @@
     align-items: center;
 }
 
+.home_page_warning {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6vmin;
+}
+
+.home_page_warning .warning_icon {
+    margin-right: 1.5vmin;
+    color: #599719;
+    font-size: 4vmin;
+}
+
+.home_page_warning .warning_msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #599719;
+    color: rgb(244, 244, 244);
+    font-size: 2.5vmin;
+    font-weight: 600;
+    padding: 1vmin 2vmin;
+    border-radius: 2vmin;
+}
+
 @media screen and (max-width: 1000px) { 
     .home_page .home_contents {
         width: 60%;

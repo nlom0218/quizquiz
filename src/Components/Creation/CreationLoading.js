@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import KakaoAdFit from '../KakaoAdFit';
+import KakaoAdFit, { AdFitInCreationLoding } from '../KakaoAdFit';
 
 const CreationLoading = () => {
     const [onload, setOnload] = useState(0)
@@ -35,7 +35,7 @@ const CreationLoading = () => {
                 </Link>
             }
         </div>
-        {/* <KakaoAdFit /> */}
+        <AdFitInCreationLoding />
     </>);
 }
 
