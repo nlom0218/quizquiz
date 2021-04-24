@@ -6,7 +6,7 @@ export const AdFitInCreationInfo = () => {
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
         ins.className = 'kakao_ad_area';
-        ins.style = "display:none; width:100%;";
+        ins.style = "display:none;";
         scr.async = 'true';
         scr.type = "text/javascript";
         scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
@@ -28,7 +28,7 @@ export const AdFitInCreationContents = () => {
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
         ins.className = 'kakao_ad_area';
-        ins.style = "display:none; width:100%;";
+        ins.style = "display:none;";
         scr.async = 'true';
         scr.type = "text/javascript";
         scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
@@ -50,7 +50,7 @@ export const AdFitInCreationLoding = () => {
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
         ins.className = 'kakao_ad_area';
-        ins.style = "display:none; width:100%;";
+        ins.style = "display:none;";
         scr.async = 'true';
         scr.type = "text/javascript";
         scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
@@ -72,7 +72,7 @@ export const AdFitInEditQuiz = () => {
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
         ins.className = 'kakao_ad_area';
-        ins.style = "display:none; width:100%;";
+        ins.style = "display:none;";
         scr.async = 'true';
         scr.type = "text/javascript";
         scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
