@@ -5,7 +5,7 @@ input[type="submit"]{
     font-weight: 500;
     cursor: pointer;
     border: none;
-    border-radius: 2vmin;
+    border-radius: 1vmin;
     text-decoration: none;
     outline: none;
     box-shadow: 10px 7px 21px -10px #000000;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { WarningIcon } from '../../icon';
 import { LS_getQuizData, LS_setQuizData } from '../../localStorage';
-import KakaoAdFit from '../KakaoAdFit';
+import KakaoAdFit, { AdFitInCreationContents } from '../KakaoAdFit';
 
 const CreationContents = () => {
     const [finish, setFinish] = useState(false)
@@ -210,7 +210,7 @@ const CreationContents = () => {
             }
             {finish && < Redirect push to="/creation/loading" />}
         </div >
-        {/* <KakaoAdFit /> */}
+        <AdFitInCreationContents />
     </>);
 }
 
