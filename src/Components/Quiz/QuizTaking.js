@@ -16,7 +16,16 @@ const QuizTaking = () => {
     const [timer, setTimer] = useState(LS_quizSettingTimer)
 
     useEffect(() => {
-        document.querySelector(".quizMode").webkitRequestFullscreen()
+        if (document.documentElement.requestFullscreen) {
+            document.querySelector(".quizMode").requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {    // Firefox
+            document.querySelector(".quizMode").mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {  // Chrome & Safari
+            document.querySelector(".quizMode").webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { //IE
+            document.querySelector(".quizMode").msRequestFullscreen();
+        }
+        // document.querySelector(".quizMode").webkitRequestFullscreen()
     }, [])
 
     useEffect(() => {
