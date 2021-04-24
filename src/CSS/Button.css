@@ -1,11 +1,11 @@
 .btn,
 input[type="submit"]{
-    padding: 10px 50px;
-    font-size: 18px;
+    padding: 1vmin 3vmin;
+    font-size: 1.8vmin;
     font-weight: 500;
     cursor: pointer;
     border: none;
-    border-radius: 10px;
+    border-radius: 2vmin;
     text-decoration: none;
     outline: none;
     box-shadow: 10px 7px 21px -10px #000000;

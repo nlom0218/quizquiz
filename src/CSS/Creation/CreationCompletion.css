@@ -4,12 +4,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* margin: 5vh 0px; */
 }
 
 .creation_complete .quizBtn{
     width: 80%;
-    margin-top: 4vh;
+    margin-top: 4vmin;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -20,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 2vmin;
     box-shadow: 0px 8px 25px -13px #000000;
 }
 
@@ -33,13 +32,14 @@
 }
 
 .start_icon, .save_icon {
-    margin: 4vh 0px 3vh 0px;
+    font-size: 2vmin;
+    margin: 4vmin 0px 3vmin 0px;
     color: rgb(244, 244, 244)
 }
 
 .quizBtn_start .start_msg,
 .quizBtn_save .save_msg {
-    margin-top: 2vh;
+    margin-top: 2vmin;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -49,18 +49,18 @@
 
 .start_msg li,
 .save_msg li {
-    margin-bottom: 1.5vh;
-    font-size: 2.2vh;
+    margin-bottom: 1.5vmin;
+    font-size: 2.2vmin;
     font-weight: 500;
     color: rgb(244, 244, 244);
 }
 
 .quizBtn_start .startBtn,
 .quizBtn_save .saveBtn {
-    font-size: 3vh;
-    padding: 1.2vh 80px;
+    font-size: 3vmin;
+    padding: 1.2vmin 8vmin;
     position: relative;
-    bottom: -20px;
+    bottom: -2vmin;
     color: #111827;
     background-color: rgb(238, 238, 238);
 }
@@ -73,5 +73,20 @@
 .quizBtn_start .startBtn:active,
 .quizBtn_save .saveBtn:active {
     position: relative;
-    top: 21px;
+    top: 2.1vmin;
+}
+
+@media screen and (max-width: 1000px) {
+    .creation_complete .quizBtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .quizBtn .quizBtn_start,
+    .quizBtn .quizBtn_save {
+        width: 80%;
+        margin-bottom: 8vmin;
+    }
 }

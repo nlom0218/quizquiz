@@ -2,7 +2,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body, html, #root, .App {
+body, html{
     height: 100%;
     width: 100%;
     -ms-user-select: none; 
@@ -12,9 +12,18 @@ body, html, #root, .App {
     user-select: none;
 }
 
+#root, .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
 .main {
     width: 100%;
-    margin-top: 6vh;
+    margin-top: 6vmin;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,15 +32,7 @@ body, html, #root, .App {
     color: #343A40;
 }
 
-.App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-
-.smallScreen {
+/* .smallScreen {
     display: none;
   }
   
@@ -57,7 +58,7 @@ body, html, #root, .App {
     .App {
         display: none;
     }
-  }
+  } */
 
 
 a {
@@ -105,5 +106,10 @@ a {
 
 /* 카카오 에드핏 */
 .adfit {
-    margin: 4vh 0vh;
+    /* width: 60%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 4vmin 0vmin;
 }

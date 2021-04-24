@@ -8,7 +8,7 @@
 
 .quiz_edit .edit_introMsg {
     width: 100%;
-    font-size: 4vh;
+    font-size: 4vmin;
     font-weight: 700;
     display: flex;
     justify-content: center;
@@ -19,13 +19,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vh;
+    margin-top: 4vmin;
 }
 
 .edit_warning .warning_icon {
-    margin-right: 15px;
+    margin-right: 1.5vmin;
     color: #E8314E;
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 
 .edit_warning .warning_msg {
@@ -34,38 +34,38 @@
     align-items: center;
     background-color: #E8314E;
     color: rgb(244, 244, 244);
-    font-size: 2.5vh;
+    font-size: 2.3vmin;
     font-weight: 600;
-    padding: 0.5vh 20px;
-    border-radius: 10px;
+    padding: 1vmin 2vmin;
+    border-radius: 2vmin;
 }
 
 .quiz_edit input {
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
     outline: none;
     border: none;
     border-bottom: 1px solid #878B8E;
-    padding-bottom: 0.8vh;
-    padding-left: 10px;
+    padding-bottom: 0.8vmin;
+    padding-left: 1vmin;
     
 }
 
 .quiz_edit .edit_title {
     width: 100%;
-    margin: 5vh 0px;
+    margin: 5vmin 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
 }
 
 .edit_title .edit_title_des {
-    margin-right: 30px;
+    margin-right: 3vmin;
     color: #FAFDFF;
     background-color: #343A40;
-    padding: 0.8vh 12px;
-    border-radius: 10px;
-    font-size: 2.2vh;
+    padding: 0.8vmin 1.2vmin;
+    border-radius: 1vmin;
+    font-size: 2.2vmin;
 }
 
 .edit_title .edit_title_value {
@@ -77,7 +77,7 @@
 }
 
  .edit_quizAndAnserList .edit_quizAndAnswer {
-    margin-bottom: 5vh;
+    margin-bottom: 5vmin;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,9 +92,9 @@
 .edit_quizAndAnser_des div {
     color: #FAFDFF;
     background-color: #343A40;
-    padding: 0.8vh 12px;
-    border-radius: 10px;
-    font-size: 2.2vh;
+    padding: 0.8vmin 1.2vmin;
+    border-radius: 1vmin;
+    font-size: 2.2vmin;
 }
 
 .edit_quizAndAnserList .edit_quiz_value {
@@ -122,14 +122,14 @@
 }
 .edit_del .del_btn {
     color: #ff3859;
-    font-size: 2.2vh;
+    font-size: 2.2vmin;
     /* border-radius: 50%; */
 }
 
 .quiz_edit .add_btn {
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
     color: #343A40;
-    margin-bottom: 5vh;
+    margin-bottom: 5vmin;
 }
 
 /* 객관식 모드 */
@@ -170,7 +170,7 @@
 }
 
 .objQuiz_select .select_item {
-    margin-top: 2vh;
+    margin-top: 2vmin;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -178,15 +178,15 @@
 }
 
 .select_item .select_num {
-    font-size: 2.5vh;
-    border: 2px solid #2e3235;
-    width: 2vh;
-    height: 2vh;
+    font-size: 2.5vmin;
+    border: 1px solid #2e3235;
+    width: 2vmin;
+    height: 2vmin;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 2vmin;
 }
 
 .select_item input {
@@ -194,27 +194,27 @@
 }
 
 .objMode_column:last-child .objMode_answer {
-    margin-top: 2vh;
+    margin-top: 2vmin;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 
 .objMode_answer .objMode_answer_msg {
-    font-size: 2vh;
+    font-size: 2vmin;
     color: #E8314E;
-    margin-right: 20px;
+    margin-right: 2vmin;
     font-weight: 600;
 }
 
 .objMode_answer input {
-    width: 3vh;
+    width: 3vmin;
     display: flex;
     align-items: flex-end;
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 2vmin;
     padding: 0;
 }
 
@@ -233,20 +233,32 @@
 .add_btn .add_btn_column {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     color: rgb(89, 152, 25);
     font-weight: 400;
 }
 
 .add_btn_column .add_btn_icon {
     cursor: pointer;
-    margin-left: 10px;
-    font-size: 3vh;
+    margin-left: 1vmin;
+    font-size: 3vmin;
 }
 
 .add_btn_column .add_btn_icon:hover {
     color: rgb(110, 193, 27);
 }
 .add_btn_column .add_btn_icon:active {
-    top: -1px;
+    top: -1vmin;
+}
+
+@media screen and (max-width: 1000px) {
+    .quiz_edit .add_btn {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .add_btn .add_btn_column:first-child {
+        margin-bottom: 1vmin;
+    }
+
 }

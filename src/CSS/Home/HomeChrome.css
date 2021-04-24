@@ -1,8 +1,8 @@
 .home_contents .home_chrome {
     width: 100%;
-    padding: 2vh 10px;
+    padding: 2vmin 1vmin;
     background-color: rgb(220, 64, 64);
-    border-radius: 20px;
+    border-radius: 3vmin;
     color: #f0f0f0;
     display: flex;
     justify-content: flex-start;
@@ -15,12 +15,12 @@
     width: 20%;
     display: flex;
     justify-content: center;
-    font-size: 7vh;
+    font-size: 7vmin;
 }
 
 .home_chrome .chrome_column:last-child {
     width: 75%;
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
 }
 
 .home_chrome .chrome_state {
-    margin: 1vh 0px;
+    margin-top: 1vmin;
 }
 
 .home_chrome a {

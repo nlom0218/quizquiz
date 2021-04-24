@@ -1,7 +1,7 @@
 .home_contents .home_notice {
     width: 100%;
-    margin-top: 3vh;
-    padding-top: 3vh;
+    margin-top: 3vmin;
+    padding-top: 3vmin;
     border-top: 2px solid #E9ECEF;
     display: flex;
     flex-direction: column;
@@ -14,17 +14,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    margin-bottom: 3vh;
+    margin-bottom: 3vmin;
 }
 
 .home_notice .home_notice_icon {
-    margin-right: 10px;
-    font-size: 4.5vh;
+    margin-right: 1vmin;
+    font-size: 4.5vmin;
     color: rgb(64, 134, 220);
 }
 
 .home_notice .home_notice_msg {
-    font-size: 3vh;
+    font-size: 3vmin;
     font-weight: 600;
 }
 
@@ -32,18 +32,26 @@
     width: 80%;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .home_notice .writing_icon {
-    margin-right: 10px;
-    font-size: 2.7vh;
+    margin-right: 1vmin;
+    font-size: 2.7vmin;
     color: rgb(64, 134, 220);;
 }
 
 .home_notice .writing_list {
-    font-size: 2.2vh;
+    font-size: 2.2vmin;
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) { 
+    .home_contents .home_notice {
+        margin-top: 5vmin;
+        padding-top: 5vmin;
+        border-top: 2px solid #E9ECEF;
+    }
 }

@@ -5,23 +5,30 @@
     justify-content: flex-start;
     align-items: flex-start;
     background-color: #F8F9FA;
-    padding: 3vh 20px;
+    padding: 3vmin 2vmin;
     color: #343A40;
     -webkit-box-shadow: 9px 8px 16px 1px rgba(0,0,0,0.89); 
     box-shadow: 9px 8px 16px 1px rgba(0,0,0,0.89);
-    border-radius: 2vh;
+    border-radius: 2vmin;
 }
 
 .notice_list .list_content {
     display: flex;
-    margin-bottom: 1.5vh;
-    font-size: 2vh;
+    margin-bottom: 1.5vmin;
+    font-size: 2vmin;
 }
 
 .list_content .list_icon {
-    margin-right: 10px;
+    margin-right: 1vmin;
 }
 
 .list_content .list_title {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+    .notice_page .notice_list {
+        width: 60%;
+    }
+
 }

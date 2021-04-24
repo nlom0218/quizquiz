@@ -9,7 +9,7 @@
 
 .quizSave-page .quizSave_desc {
     width: 100%;
-    margin-bottom: 5vh;
+    margin-bottom: 5vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@
 }
 
 .quizSave_desc .quizSave_desc_normal {
-    font-size: 4vh;
+    font-size: 4vmin;
     color: #111827;
     font-weight: 600;
 }
@@ -27,13 +27,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vh;
+    margin-top: 4vmin;
 }
 
 .quizSave_desc_warning .warning_icon {
-    margin-right: 15px;
+    margin-right: 1.5vmin;
     color: #E8314E;
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 
 .quizSave_desc_warning .warning_msg {
@@ -42,10 +42,10 @@
     align-items: center;
     background-color: #E8314E;
     color: rgb(244, 244, 244);
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
     font-weight: 600;
-    padding: 0.5vh 20px;
-    border-radius: 10px;
+    padding: 1vmin 2vmin;
+    border-radius: 2vmin;
 }
 
 .quizSave-page  .quizSave_btn {
@@ -59,14 +59,14 @@
 
 .quizSave_btn .quizSave_column {
     width: 100%;
-    margin-bottom: 3.5vh;
+    margin-bottom: 3.5vmin;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
 .quizSave_btn .btn {
-    margin-right: 30px;
+    margin-right: 3vmin;
 }
 
 .quizSave_btn .noQuiz {
@@ -82,12 +82,12 @@
 }
 
 .quizSave_btn .quizSave_icon {
-    font-size: 3.5vh;
+    font-size: 4vmin;
     color: #343A40;
 }
 
 .quizSave_column .btn {
-    font-size: 2vh;
+    font-size: 2.5vmin;
 }
 
 .quizSave_column .quizSave_btn_msg {
@@ -97,8 +97,8 @@
     top: 70%;
     left: 42%;
     opacity: 0.9;
-    font-size: 2vh;
-    padding: 2vh 30px;
+    font-size: 2vmin;
+    padding: 2vmin 3vmin;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;

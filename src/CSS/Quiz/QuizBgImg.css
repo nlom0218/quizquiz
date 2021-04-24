@@ -12,24 +12,24 @@
 }
 
 .BgImg_seletForm .seletFrom_msg {
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
 }
 
 .BgImg_seletForm .seletForm_column {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1vh;
-    margin-bottom: 3vh;
+    margin-top: 1vmin;
+    margin-bottom: 3vmin;
 }
 
 
 
 .seletForm_column .moveBtn {
     padding: 0px;
-    width: 4.5vh;
-    height: 4.5vh;
-    font-size: 3vh;
+    width: 4.5vmin;
+    height: 4.5vmin;
+    font-size: 3vmin;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -44,17 +44,17 @@
 }
 
 .seletForm_column .BgImg_img {
-    margin: 0px 20px;
+    margin: 0 2vmin;
     width: 16vw;
     height: 20vh;
-    border-radius: 20px;
+    border-radius: 2vmin;
     -webkit-box-shadow: 9px 10px 16px 1px rgba(0,0,0,0.89); 
     box-shadow: 9px 10px 16px 1px rgba(0,0,0,0.89);
 }
 
 .BgImg_seletForm .seletFrom_btn {
-    padding: 1vh 15px;
-    font-size: 2vh;
+    padding: 1vmin 1.5vmin;
+    font-size: 2vmin;
     display: flex;
     justify-content: center;
     background-color: rgb(128, 184, 128);
@@ -67,4 +67,18 @@
 
 .BgImg_seletForm .seleted {
     background-color: rgb(112, 174, 112);
+}
+
+@media screen and (max-width: 1000px) {
+    .quiz_page .setting_BgImg {
+        padding-bottom: 3vmin;
+        margin-bottom: 3vmin;
+        border-bottom: 1.5px solid #F8F9FA;
+    }
+
+    .seletForm_column .BgImg_img {
+        width: 28vw;
+        height: 14vh;
+    }
+    
 }

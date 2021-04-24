@@ -1,9 +1,9 @@
 .notice_page .notice_intro_msg {
-    font-size: 4vh;
+    font-size: 4vmin;
     width: 60%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin-bottom: 6vh;
+    margin-bottom: 6vmin;
     font-weight: 700;
 }

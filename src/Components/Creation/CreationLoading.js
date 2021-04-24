@@ -22,10 +22,12 @@ const CreationLoading = () => {
 
     return (<>
         <div className="creation_loading">
-            <div className="loading_msg">{loadEnd ? "퀴즈 생성 완료 📋" : "퀴즈 생성중... 📋"}</div>
-            <div className="loading_bar">
-                <div className="bar_state" style={{ width: `${onload}%` }}></div>
-                <div className="bar_text">{onload}%</div>
+            <div className="creation_loading_column">
+                <div className="loading_msg">{loadEnd ? "퀴즈 생성 완료 📋" : "퀴즈 생성중... 📋"}</div>
+                <div className="loading_bar">
+                    <div className="bar_state" style={{ width: `${onload}%` }}></div>
+                    <div className="bar_text">{onload}%</div>
+                </div>
             </div>
             {loadEnd &&
                 <Link to="/creation/completion">
@@ -33,7 +35,7 @@ const CreationLoading = () => {
                 </Link>
             }
         </div>
-        <KakaoAdFit />
+        {/* <KakaoAdFit /> */}
     </>);
 }
 

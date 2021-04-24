@@ -58,7 +58,7 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
                     onChange={onChangeValue}
                     required
                     autoComplete='off'
-                    maxLength="50"
+                    maxLength="30"
                 />
                 <div className="quizInfo_num">
                     <div className="quizInfo_num_msg">몇 개의 퀴즈를 만드나요? (1~20)</div>
@@ -80,7 +80,7 @@ const CreationQuizInfo = ({ completeQuizInfo }) => {
             </form>
             <div className="creationQuiz_editMsg">퀴즈 추가, 삭제, 수정은 퀴즈 저장소에서 가능합니다</div>
         </div >
-        <KakaoAdFit />
+        {/* <KakaoAdFit /> */}
     </>);
 }
 

@@ -125,6 +125,7 @@ const QuizEdit = () => {
                         name={`QS${storage}Btn`}
                         onChange={onChangeTitle}
                         autoComplete='off'
+                        maxLength="30"
                     />
                 </div>
                 <div className="edit_quizAndAnserList">
@@ -294,7 +295,7 @@ const QuizEdit = () => {
                 <button className="btn" onClick={onClickBack}>돌아가기</button>
             </div>
         </div>
-        <KakaoAdFit />
+        {/* <KakaoAdFit /> */}
         <Footer />
         { completion && <Redirect push to="/storage" />}
     </>);

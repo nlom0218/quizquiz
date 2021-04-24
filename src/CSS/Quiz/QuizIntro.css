@@ -8,7 +8,7 @@
 
 .quiz_page .quiz_introMsg {
     width: 100%;
-    font-size: 4vh;
+    font-size: 4vmin;
     font-weight: 700;
     display: flex;
     justify-content: center;
@@ -16,8 +16,18 @@
 
 .quiz_page .quiz_setting {
     width: 100%;
-    margin: 5vh 0px;
+    margin: 5vmin 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+    .quiz_page .quiz_setting {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
 }
