@@ -78,9 +78,27 @@ const QuizTaking = () => {
     const onClickScrBtn = (e) => {
         const BtnName = getScr(e)
         if (BtnName === "smallScr") {
-            document.webkitExitFullscreen()
+            if (document.documentElement.requestFullscreen) {
+                document.exitFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {    // Firefox
+                document.mozExitFullscree();
+            } else if (document.documentElement.webkitRequestFullscreen) {  // Chrome & Safari
+                document.webkitExitFullscree();
+            } else if (document.documentElement.msRequestFullscreen) { //IE
+                document.msExitFullscree();
+            }
+            // document.webkitExitFullscreen()
         } else if (BtnName === "fullScr") {
-            document.querySelector(".quizMode").webkitRequestFullscreen()
+            if (document.documentElement.requestFullscreen) {
+                document.querySelector(".quizMode").requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {    // Firefox
+                document.querySelector(".quizMode").mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {  // Chrome & Safari
+                document.querySelector(".quizMode").webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { //IE
+                document.querySelector(".quizMode").msRequestFullscreen();
+            }
+            // document.querySelector(".quizMode").webkitRequestFullscreen()
         }
     }
 
