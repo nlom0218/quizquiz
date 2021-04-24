@@ -5,12 +5,12 @@
     align-items: flex-start;
     /* margin: 0 auto; */
     background-color: #343A40;
-    padding: 3vh 0px;
+    padding: 3vmin 0px;
     border-top: 1px solid #1f2224;
 }
 
 .footer .footer_explan-me {
-    padding-right: 50px;
+    padding-right: 5vmin;
     border-right: 1px solid #939393;
 }
 
@@ -18,40 +18,41 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 3px;
+    margin-bottom: 0.3vmin;
     color: #b3b3b3;
-    font-size: 1.5vh;
+    font-size: 1.5vmin;
     font-weight: 350;
 }
 
 .footer_explan-me .explan-me_item:first-child,
 .footer_explan-web .explan-web_item:first-child {
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 2vmin;
 }
 
 .footer_explan-me a {
     color: #b3b3b3;
-    font-size: 1.5vh;
+    font-size: 1.5vmin;
 }
 
 .footer_explan-me div:first-child {
-    margin-right: 10px;
+    margin-right: 1vmin;
 }
 
 .footer .footer_explan-web {
-    margin-left: 50px;
+    margin-left: 5vmin;
 }
 
 .footer_explan-web .explan-web_item {
     color: #b3b3b3;
-    font-size: 1.5vh;
+    font-size: 1.5vmin;
     font-weight: 350;
     display: flex;
     align-items: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 1vmin;
 }
 
 .explan-web_log_icon {
-    margin-right: 10px;
+    margin-right: 1vmin;
+    font-size: 1.3vmin;
 }

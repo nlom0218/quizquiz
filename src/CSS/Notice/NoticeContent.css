@@ -1,16 +1,16 @@
 .notice_page .notice_content {
-    margin-bottom: 8vh;
+    margin-bottom: 8vmin;
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: #F8F9FA;
-    padding: 3vh 20px;
+    padding: 3vmin 2vmin;
     color: #343A40;
     -webkit-box-shadow: 9px 8px 16px 1px rgba(0,0,0,0.89); 
     box-shadow: 9px 8px 16px 1px rgba(0,0,0,0.89);
-    border-radius: 2vh;
+    border-radius: 2vmin;
 }
 
 .notice_content .content_headNavBtn {
@@ -19,8 +19,8 @@
 
 
 .content_headNavBtn .headNavBtn_listBtn {
-    font-size: 3vh;
-    margin-bottom: 3vh;
+    font-size: 3vmin;
+    margin-bottom: 3vmin;
 }
 
 .notice_content .content_text {
@@ -29,14 +29,14 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 3vh;
+    margin-bottom: 3vmin;
 }
 
 .content_text .text_title {
     width: 100%;
-    font-size: 4vh;
+    font-size: 4vmin;
     font-weight: 700;
-    margin-bottom: 2vh;
+    margin-bottom: 2vmin;
 }
 
 .content_text .text_column {
@@ -44,14 +44,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 2vh;
-    font-size: 2vh;
+    margin-bottom: 2vmin;
+    font-size: 2vmin;
     font-weight: 300;
 }
 
 .content_text .text_author {
     color: rgb(21, 162, 21);
-    margin-right: 10px;
+    margin-right: 1vmin;
 }
 
 .content_text .text_desc,
@@ -61,8 +61,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    margin-bottom: 1vh;
-    font-size: 2.5vh;
+    margin-bottom: 1vmin;
+    font-size: 2.5vmin;
     font-weight: 400;
     line-height: 120%;
 }
@@ -73,9 +73,9 @@
 
 .text_list .list_item {
     width: 100%;
-    margin-left: 20px;
-    margin-bottom: 1vh;
-    font-size: 2.2vh;
+    margin-left: 2vmin;
+    margin-bottom: 1vmin;
+    font-size: 2.2vmin;
 }
 
 .notice_content .content_footNavBtn {
@@ -83,5 +83,5 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 3vh;
+    font-size: 3vmin;
 }

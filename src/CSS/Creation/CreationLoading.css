@@ -3,13 +3,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex: 1;
+}
+
+.creation_loading .creation_loading_column {
+  width: 100%;
+  margin-top: 10vmin;
 }
 
 .loading_bar {
   width:100%;
-  height: 3vh;
+  height: 3vmin;
   border:1px solid #343A40;
   overflow:hidden;
   background-color:  #F8F9FA;
@@ -19,26 +24,26 @@
 
 .bar_state {
   width:37%;
-  height: 3vh;
+  height: 3vmin;
   border-right: 1px solid #343A40;
   background: #DC4040;
 }
 
 .bar_text {
   color: #343A40;
-  font-size: 2vh;
+  font-size: 2vmin;
   /* font-style: italic; */
   font-weight: bold;
-  left: 25px;
+  left: 2.5vmin;
   position: relative;
-  top: -2.25vh; 
+  top: -2.25vmin; 
 }
 
 
   .loading_msg {
     width: 100% ;
-    font-size: 3vh;
-    margin-bottom: 1vh;
+    font-size: 3vmin;
+    margin-bottom: 1vmin;
     display: flex;
     justify-content: flex-end;
   }
@@ -46,7 +51,7 @@
   .creation_loading .nextBtn {
     background-color:#DC4040;
     color: #F8F9FA;
-    margin-top: 50px;
-    font-size: 2vh;
+    margin-top: 5vmin;
+    font-size: 2vmin;
     font-weight: 600;
   }

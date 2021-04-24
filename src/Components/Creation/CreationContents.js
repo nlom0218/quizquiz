@@ -195,20 +195,22 @@ const CreationContents = () => {
                         </div>
                     </div>
                     <div className="quiz_answers_select">
-                        <div className="quiz_answers_msg">정답을 적어주세요</div>
+                        <div className="quiz_answers_msg">정답을 적어주세요(1~4)</div>
                         <input type="number" min={1} max={4} className="quiz_answers_num" required value={objAnswer}
                             onChange={onChangeValue} name="objAnswer" />
                     </div>
-                    <div className="quizContents_btn">
-                        <input
-                            type="submit"
-                            value={num === numOfQuiz ? "퀴즈 생성하기" : `${num}번 문제 만들기`} />
+                    <div className="obj_quiz_column">
+                        <div className="quizContents_btn">
+                            <input
+                                type="submit"
+                                value={num === numOfQuiz ? "퀴즈 생성하기" : `${num}번 문제 만들기`} />
+                        </div>
                     </div>
                 </form>
             }
             {finish && < Redirect push to="/creation/loading" />}
         </div >
-        <KakaoAdFit />
+        {/* <KakaoAdFit /> */}
     </>);
 }
 
