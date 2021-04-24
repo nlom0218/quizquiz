@@ -2,7 +2,7 @@ const content1 = {
     id: 1618830562699,
     author: "KHD",
     title: "QUIZ HI를 이용해 주셔서 감사합니다.",
-    createdAt: "2021-04-25",
+    createdAt: "2021-04-24",
     desc1: `
         안녕하세요? 먼저 QUIZ HI를 방문해 주셔서 감사합니다. 아직 많이 부족한 웹이지만 점차 개선하여
         이용하시는 모두가 만족할 수 있는 퀴즈 플랫폼이 되도록 노력하겠습니다. 최종 목표는 유저간 소통으로
@@ -39,7 +39,7 @@ const content2 = {
     id: 1618744492442,
     author: "KHD",
     title: "QUIZ HI 이용에 앞서",
-    createdAt: "2021-04-25",
+    createdAt: "2021-04-24",
     desc1: `
      QUIZ HI 이용에 앞서...
     `,
