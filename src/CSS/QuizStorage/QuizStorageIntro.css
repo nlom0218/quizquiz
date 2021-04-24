@@ -55,7 +55,7 @@
     
     .quizList .topStorage,
     .quizList .botStorage {
-        height: 32vmin;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
