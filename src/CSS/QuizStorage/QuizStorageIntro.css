@@ -130,7 +130,7 @@
 
 @media screen and (max-width: 1000px) {
     .quizStorage_intro .quizList {
-        height: auto;
+        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -140,7 +140,7 @@
     
     .quizList .topStorage,
     .quizList .botStorage {
-        height: auto;
+        height: 100%;
         width: 60%;
         display: flex;
         flex-direction: column;
