@@ -3,6 +3,7 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import HomeChrome from '../Components/Home/HomeChrome';
 import HomeNotice from '../Components/Home/HomeNotice';
+import HomeSaveArea from "../Components/Home/HomeSaveArea"
 import KakaoAdFit from '../Components/KakaoAdFit';
 import { StarFace, WarningIcon } from '../icon';
 
@@ -20,6 +21,7 @@ const Home = () => {
             </div>
             <div className="home_contents">
                 <HomeChrome />
+                <HomeSaveArea />
                 <HomeNotice />
             </div>
         </div >
