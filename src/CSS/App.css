@@ -69,6 +69,7 @@ a {
 @import "./Home/HomeIntro.css";
 @import "./Home/HomeChrome.css";
 @import "./Home/HomeNotice.css";
+@import "./Home/HomeSaveArea.css";
 
 /* Notice */
 @import "./Notice/NoticeList.css";

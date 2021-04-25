@@ -1,0 +1,61 @@
+.home_contents .home_saveArea {
+    margin-top: 3vmin;
+    width: 100%;
+    padding: 2vmin 1vmin;
+    background-color: rgb(255, 255, 64);
+    border-radius: 3vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-box-shadow: 9px 8px 16px 1px rgba(0,0,0,0.89); 
+    box-shadow: 9px 8px 16px 1px rgba(0,0,0,0.89);
+}
+
+.home_saveArea .saveArea_column:first-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 3vmin;
+    font-weight: 600;
+} 
+
+.home_saveArea .saveArea_column:nth-child(2) {
+    margin: 1.5vmin 0vmin;
+    width: 90%;
+    font-size: 2.5vmin;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home_saveArea .saveArea_desktop {
+    margin-bottom: 0.5vmin;
+}
+
+.home_saveArea .saveArea_column:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 2vmin;
+    text-decoration: underline;
+}
+.blinking { 
+    -webkit-animation:blink 0.3s ease-in-out infinite alternate;
+    -moz-animation:blink 0.3s ease-in-out infinite alternate;
+    animation:blink 0.3s ease-in-out infinite alternate; 
+} 
+@-webkit-keyframes blink {
+    0% {color: #343A40;}
+    100% {color: #DC4041;} 
+} 
+@-moz-keyframes blink{
+    0% {color: #343A40;}
+    100% {color: #DC4041;} 
+}
+@keyframes blink{
+    0% {color: #343A40;}
+    100% {color: #DC4041;} 
+}
