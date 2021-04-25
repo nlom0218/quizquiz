@@ -25,10 +25,12 @@ const HomeNotice = () => {
                     <div className="writing_list">{content2.createdAt} | {content2.title}</div>
                 </Link>
             </div>
-            {/* <div className="writing_icon">📗</div>
-            <Link to={`/notice/${content3.id}`}>
-                <div className="writing_list">{content3.createdAt} | {content3.title}</div>
-            </Link> */}
+            <div className="notice_writing_column">
+                <div className="writing_icon">📗</div>
+                <Link to={`/notice/${content3.id}`}>
+                    <div className="writing_list">{content3.createdAt} | {content3.title}</div>
+                </Link>
+            </div>
         </div>
     </div >);
 }

@@ -1,21 +1,22 @@
 import React from 'react';
-import { Chrome } from '../../icon';
+import { Link } from 'react-router-dom';
 
-const HomeChrome = () => {
-    const browser = window.chrome ? "chrome" : null
+const HomeSaveArea = () => {
 
-    return (<div className="home_chrome">
-        <div className="chrome_column">
-            <div className="chrome_icon">{Chrome}</div>
+    return (<div className="home_saveArea">
+        <div className="saveArea_column">
+            <div className="saveArea_msg blinking">퀴즈를 만들기 전 꼭 확인하세요!</div>
         </div>
-        <div className="chrome_column">
-            <div className="chrome_msg">원활한 QUIZ HI의 이용을 위해 구글 크롬을 사용해주세요</div>
-            <div className="chrome_state">
-                {browser ? "현재 구글 크롬을 사용하고 있습니다" : "구글 크롬 다운로드는 아래의 링크를 통해 가능합니다"}
-            </div>
-            {!browser && <a href="https://www.google.com/intl/ko/chrome/" className="chrome_download">구글 크롬 다운로드</a>}
+        <div className="saveArea_column">
+            <div className="saveArea_desktop">1. 컴퓨터마다 저장된 퀴즈는 다릅니다.</div>
+            <div className="saveArea_browser">2. 브라우저마다 저장된 퀴즈는 다릅니다.</div>
+        </div>
+        <div className="saveArea_column">
+            <Link to={`/notice/1619348147126`}>
+                <div className="saveArea_notice">관련 공지사항 보러가기 Click</div>
+            </Link>
         </div>
     </div>);
 }
 
-export default HomeChrome;
+export default HomeSaveArea;

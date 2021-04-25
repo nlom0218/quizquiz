@@ -28,6 +28,7 @@ const NoticeContent = () => {
             })}</div>
             <div className="text_desc desc4">{content.desc4}</div>
             <div className="text_desc desc5">{content.desc5}</div>
+            <div className="text_desc desc6">{content.desc6}</div>
             <div className="text_list list2">{content.list2}</div>
         </div>
         <div className="content_footNavBtn">
