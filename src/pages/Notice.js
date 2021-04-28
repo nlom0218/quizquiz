@@ -5,8 +5,10 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import NoticeContent from '../Components/Notice/NoticeContent';
 import NoticeIntro from '../Components/Notice/NoticeIntro';
+import useTitle from '../Hooks/useTitle';
 
 const Notice = () => {
+    const titleUpdataer = useTitle("Quiz Hi | Notice")
 
     return (<>
         <Header />

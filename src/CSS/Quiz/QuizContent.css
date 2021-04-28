@@ -25,14 +25,17 @@
 }
 
 .quiz_content .content_answer {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items:center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .content_answer .answer_btn {
+    width: 13%;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 4vmin;
     border-radius: 2vmin;
     margin-right: 3vmin;
@@ -43,6 +46,7 @@
 }
 
 .content_answer .answer_right {
+    width: 80%;
     font-size: 6vmin;
     color: #E8314E;
 }

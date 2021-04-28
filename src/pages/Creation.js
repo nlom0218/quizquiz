@@ -8,8 +8,10 @@ import CreationQuizSave from '../Components/Creation/CreationQuizSave';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import CreationLoading from '../Components/Creation/CreationLoading';
+import useTitle from '../Hooks/useTitle';
 
 const Creation = () => {
+    const titleUpdataer = useTitle("Quiz Hi | Creation")
     return (<>
         <Header />
         <div className="creation_page main">

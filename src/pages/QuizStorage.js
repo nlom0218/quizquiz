@@ -4,8 +4,11 @@ import { Route, Switch } from 'react-router';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import QuizStorageIntro from '../Components/QuizStorage.js/QuizStorageIntro';
+import useTitle from '../Hooks/useTitle';
 
 const QuizStorage = () => {
+    const titleUpdataer = useTitle("Quiz Hi | QuizStorage")
+
     return (<>
         <Header />
         <div className="quizStorage_page main">

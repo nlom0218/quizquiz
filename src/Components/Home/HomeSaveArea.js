@@ -10,9 +10,10 @@ const HomeSaveArea = () => {
         <div className="saveArea_column">
             <div className="saveArea_desktop">1. 컴퓨터마다 저장된 퀴즈는 다릅니다.</div>
             <div className="saveArea_browser">2. 브라우저마다 저장된 퀴즈는 다릅니다.</div>
+            <div className="saveArea_downUplaod">3. 퀴즈 파일 다운로드 & 업로드가 가능합니다.</div>
         </div>
         <div className="saveArea_column">
-            <Link to={`/notice/1619348147126`}>
+            <Link to={`/notice/1619611041820`}>
                 <div className="saveArea_notice">관련 공지사항 보러가기 Click</div>
             </Link>
         </div>

@@ -12,7 +12,6 @@ const QuizEdit = () => {
     const [title, setTitle] = useState(quizTitle)
     const [quizAnswerArr, setQuizAnswerArr] = useState(contents)
     const [completion, setCompletion] = useState(false)
-
     const onChangeTitle = (e) => {
         const { target: { value, name } } = e
         const newTitle = value
@@ -82,7 +81,6 @@ const QuizEdit = () => {
         const num = getDivNum(e)
         const { name } = getDivName(e)
         const newContents = contents.filter((item, index) => index !== num - 1)
-        console.log(newContents);
         const quizData = LS_getQuizData()
         LS_setQuizData({ ...quizData, info: { ...quizData.info, numOfQuiz: numOfQuiz - 1 }, contents: newContents })
         LS_saveQuizData(name)
@@ -91,7 +89,6 @@ const QuizEdit = () => {
 
     const onClickAddBtn = (e) => {
         const { name, type } = getDivName(e)
-        console.log(name, type);
         if (type === "sub") {
             const newContents = [...contents, { quiz: "", answer: "", type }]
             const quizData = LS_getQuizData()
