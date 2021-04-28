@@ -154,7 +154,7 @@ const QuizEdit = () => {
                                             id={index}
                                             name={`QS${storage}Btn`}
                                             onChange={onChangeData("answer")}
-                                            maxLength="36"
+                                            maxLength="80"
                                             autoComplete='off'
                                         />
                                     </div>
@@ -207,7 +207,7 @@ const QuizEdit = () => {
                                                     placeholder="1번 문항을 입력하세요"
                                                     onChange={onChangeSelect}
                                                     autoComplete='off'
-                                                    maxLength="36"
+                                                    maxLength="80"
                                                     name={`QS${storage}Btn`}
                                                 />
                                             </div>
@@ -222,7 +222,7 @@ const QuizEdit = () => {
                                                     placeholder="2번 문항을 입력하세요"
                                                     onChange={onChangeSelect}
                                                     autoComplete='off'
-                                                    maxLength="36"
+                                                    maxLength="80"
                                                     name={`QS${storage}Btn`}
                                                 />
                                             </div>
@@ -237,7 +237,7 @@ const QuizEdit = () => {
                                                     placeholder="3번 문항을 입력하세요"
                                                     onChange={onChangeSelect}
                                                     autoComplete='off'
-                                                    maxLength="36"
+                                                    maxLength="80"
                                                     name={`QS${storage}Btn`}
                                                 />
                                             </div>
@@ -252,7 +252,7 @@ const QuizEdit = () => {
                                                     placeholder="4번 문항을 입력하세요"
                                                     onChange={onChangeSelect}
                                                     autoComplete='off'
-                                                    maxLength="36"
+                                                    maxLength="80"
                                                     name={`QS${storage}Btn`}
                                                 />
                                             </div>
