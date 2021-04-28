@@ -76,6 +76,9 @@ a {
 @import "./Notice/NoticeIntro.css";
 @import "./Notice/NoticeContent.css";
 
+/* UploadQuiz */
+@import "./Upload/UploadQuiz.css";
+
 /* 카카오 에드핏 */
 .adfit {
     /* width: 60%; */

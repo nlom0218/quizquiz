@@ -31,7 +31,8 @@
     align-items: flex-start;
 }
 
-.home_saveArea .saveArea_desktop {
+.home_saveArea .saveArea_desktop,
+.home_saveArea .saveArea_browser {
     margin-bottom: 0.5vmin;
 }
 

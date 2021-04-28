@@ -5,9 +5,11 @@ import HomeChrome from '../Components/Home/HomeChrome';
 import HomeNotice from '../Components/Home/HomeNotice';
 import HomeSaveArea from "../Components/Home/HomeSaveArea"
 import KakaoAdFit from '../Components/KakaoAdFit';
+import useTitle from '../Hooks/useTitle';
 import { StarFace, WarningIcon } from '../icon';
 
 const Home = () => {
+    const titleUpdataer = useTitle("Quiz Hi | Home")
     return (<>
         <Header />
         <div className="home_page main">

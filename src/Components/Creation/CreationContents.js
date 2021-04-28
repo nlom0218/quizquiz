@@ -116,7 +116,7 @@ const CreationContents = () => {
                             onChange={onChangeValue}
                             placeholder={`${num}번 정답을 적어주세요`}
                             required
-                            maxLength="36"
+                            maxLength="80"
                             autoComplete='off'
                         />
                     </div>
@@ -151,7 +151,7 @@ const CreationContents = () => {
                                 placeholder={`1번 문항을 입력해주세요`}
                                 autoComplete='off'
                                 required
-                                maxLength="36"
+                                maxLength="80"
                             />
                         </div>
                         <div className="answers_2 answers_item">
@@ -164,7 +164,7 @@ const CreationContents = () => {
                                 placeholder={`2번 문항을 입력해주세요`}
                                 autoComplete='off'
                                 required
-                                maxLength="36"
+                                maxLength="80"
                             />
                         </div>
                         <div className="answers_3 answers_item">
@@ -177,7 +177,7 @@ const CreationContents = () => {
                                 placeholder={`3번 문항을 입력해주세요`}
                                 autoComplete='off'
                                 required
-                                maxLength="36"
+                                maxLength="80"
                             />
                         </div>
                         <div className="answers_4 answers_item">
@@ -190,7 +190,7 @@ const CreationContents = () => {
                                 placeholder={`4번 문항을 입력해주세요`}
                                 autoComplete='off'
                                 required
-                                maxLength="36"
+                                maxLength="80"
                             />
                         </div>
                     </div>

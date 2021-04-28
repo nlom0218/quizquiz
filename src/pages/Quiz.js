@@ -4,9 +4,11 @@ import { Route, Switch } from 'react-router-dom';
 import QuizEdit from '../Components/Quiz/QuizEdit';
 import QuizIntro from '../Components/Quiz/QuizIntro';
 import QuizTaking from '../Components/Quiz/QuizTaking';
+import useTitle from '../Hooks/useTitle';
 
 
 const Quiz = () => {
+    const titleUpdataer = useTitle("Quiz Hi | Quiz")
 
     return (<>
         <Switch>

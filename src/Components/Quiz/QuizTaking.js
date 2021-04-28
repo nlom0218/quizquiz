@@ -68,7 +68,6 @@ const QuizTaking = () => {
     }
 
     const getScr = (e) => {
-        console.dir(e.target.parentNode);
         let { target: { parentNode: { parentNode: { id: id1 } } } } = e
         let { target: { parentNode: { id: id2 } } } = e
         const BtnName = id1 ? id1 : id2
