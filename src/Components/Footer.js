@@ -6,6 +6,9 @@ const Footer = () => {
     const fn = () => {
         console.log("OMG");
     }
+    const test = () => {
+        console.log("");
+    }
     return (
         <div className="footer">
             <div className="footer_explan-me">
