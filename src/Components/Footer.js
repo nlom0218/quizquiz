@@ -28,7 +28,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="explan-me_github explan-me_item">
-                    <div className="explan-me_github_list">GITHUB :</div>
+                    <div className="explan-me_github_list">GITHUB zzz:</div>
                     <div className="explan-me_github_content">
                         <a href="https://github.com/nlom0218" target="blank">{Github}</a></div>
                 </div>
