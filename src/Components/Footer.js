@@ -3,6 +3,9 @@ import "../CSS/Footer.css"
 import { Github, Instagram, Sun, WebLogo } from '../icon';
 
 const Footer = () => {
+    const fn = () => {
+        console.log("hi");
+    }
     return (
         <div className="footer">
             <div className="footer_explan-me">
