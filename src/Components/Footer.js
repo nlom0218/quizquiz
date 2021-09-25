@@ -4,7 +4,7 @@ import { Github, Instagram, Sun, WebLogo } from '../icon';
 
 const Footer = () => {
     const fn = () => {
-        console.log("hi");
+        console.log("OMG");
     }
     return (
         <div className="footer">
