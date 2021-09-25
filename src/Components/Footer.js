@@ -7,11 +7,7 @@ const Footer = () => {
         console.log("OMG");
     }
     const test = () => {
-<<<<<<< HEAD
-        console.log("");
-=======
         console.log("test");
->>>>>>> test
     }
     return (
         <div className="footer">
